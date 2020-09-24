@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/lm.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/lm.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/lm.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+
+  <meta name="description" content="今天做了三个dp 第一个是子串 状态：设$f[i][j][p][0&#x2F;1]$表示a串前i位使用p个子串匹配b串前j位字符且第i个位置选&#x2F;不选的方案数 转移：  当$a[i]&#x3D;b[j]$ $f[val][j][p][0]&#x3D;(f[val\;xor\;1][j][p][0]+f[val\;xor\;1][j][p][1])\%mod$ $f[val][j][p][1]&#x3D;(f[val\;xor\;1][j-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8.31集训">
+<meta property="og:url" content="http://example.com/2020/08/31/8.31/index.html">
+<meta property="og:site_name" content="Welcome to my blog!">
+<meta property="og:description" content="今天做了三个dp 第一个是子串 状态：设$f[i][j][p][0&#x2F;1]$表示a串前i位使用p个子串匹配b串前j位字符且第i个位置选&#x2F;不选的方案数 转移：  当$a[i]&#x3D;b[j]$ $f[val][j][p][0]&#x3D;(f[val\;xor\;1][j][p][0]+f[val\;xor\;1][j][p][1])\%mod$ $f[val][j][p][1]&#x3D;(f[val\;xor\;1][j-">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/1307264/202008/1307264-20200831212055190-735327928.png">
+<meta property="article:published_time" content="2020-08-31T13:30:30.000Z">
+<meta property="article:modified_time" content="2020-09-24T14:55:53.409Z">
+<meta property="article:author" content="Youngore">
+<meta property="article:tag" content="summary">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2020.cnblogs.com/blog/1307264/202008/1307264-20200831212055190-735327928.png">
+
+
+<link rel="canonical" href="http://example.com/2020/08/31/8.31/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>8.31集训 | Welcome to my blog!</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Welcome to my blog!</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Hello World!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags" rel="section"><i class="fa fa-tag fa-fw"></i>Tags<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">71</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Youngore"
+      src="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+  <p class="site-author-name" itemprop="name">Youngore</p>
+  <div class="site-description" itemprop="description">a OIer from HE</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+        
+          <span class="site-state-item-count">71</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Youngore" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Youngore" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/7499131672/profile?topnav=1&wvr=6" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;7499131672&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Youngore5" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Youngore5" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/14334254/youngore" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;14334254&#x2F;youngore" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/31/8.31/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="a OIer from HE">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          8.31集训
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-31 21:30:30" itemprop="dateCreated datePublished" datetime="2020-08-31T21:30:30+08:00">2020-08-31</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-24 22:55:53" itemprop="dateModified" datetime="2020-09-24T22:55:53+08:00">2020-09-24</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">总结</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>今天做了三个dp</p>
+<p>第一个是子串</p>
+<p>状态：设$f[i][j][p][0/1]$表示a串前i位使用p个子串匹配b串前j位字符且第i个位置选/不选的方案数</p>
+<p>转移：</p>
+<ul>
+<li>当$a[i]=b[j]$</li>
+<li>$f[val][j][p][0]=(f[val\;xor\;1][j][p][0]+f[val\;xor\;1][j][p][1])\%mod$</li>
+<li>$f[val][j][p][1]=(f[val\;xor\;1][j-1][p][1]+(f[val\;xor\;1][j-1][p-1][0]+f[val\;xor\;1][j-1][p-1][1])\%mod)\%mod$</li>
+<li>当$a[i]\neq[j]$</li>
+<li>$f[val][j][p][0]=(f[val\;xor\;1][j][p][0]+f[val\;xor\;1][j][p][1])\%mod$</li>
+<li>$f[val][j][p][1]=0;$</li>
+</ul>
+<p>时间复杂度$O(n^3)$，空间复杂度$O(m\times k)$</p>
+<p>因此需要优化空间，发现第一维$i$只与$i-1$有关系，所以把$i$这一维度滚掉</p>
+<p>方法：$val$是当前的$i$，而$val\;xor\;1$是$i-1$，总之就是转移方程的时候另一个数</p>
+<p>每次都$xor\;1$，然后答案就是$n\&amp;1$，感觉很奇妙。。。。</p>
+<p>注意：这种情况下，$val$初始为1</p>
+<p>第二个是换教室</p>
+<p>一道极其好，但是极其难做的题</p>
+<p><img src="https://img2020.cnblogs.com/blog/1307264/202008/1307264-20200831212055190-735327928.png" alt=""></p>
+<p>坑点：</p>
+<p>1.弗洛伊德</p>
+<p>有向图和无向图写法不一样</p>
+<p>有向图：</p>
+<details>
+<summary>Code</summary>
+<pre><code>memset (dis, 0x3f, sizeof dis);
+for (i = 1; i <= n; ++ i) dis[i][i] = 0;
+for (k = 1; k <= n; ++ k)
+   for (i = 1; i <= n; ++ ｉ)
+      for (j = 1; j <= n; ++ j)
+         dis[i][j] = min(dis[i][j], dis[i][k] + dis[k][j]);
+</code></pre>
+</details>
+
+<p>无向图：</p>
+<details>
+<summary>Code</summary>
+<pre><code>for (i = 1; i <= n; ++ i)
+   for (j = 1; j < i; ++ j)
+      dis[i][j] = dis[j][i] = inf;
+for (i = 1; i <= e; ++ i)
+&#123;
+   cin >> x >> y >> z;
+   dis[x][y] = dis[y][x] = min(dis[x][y], z);
+&#125;
+for (e = 1; e <= v; ++ e)
+   for (i = 1; i <= v; ++ i)
+      for (j = 1; j < i; ++ j)
+         dis[i][j] = dis[j][i] = min(dis[i][j], dis[i][e] + dis[e][j]);
+</code></pre>
+</details>
+
+<p>2.只在memset里面用0x3f，0x7f，其中$0x7f$比$0x3f$大一倍，$0x7f$约为2147483647</p>
+<p>在平时不要用赋值语句，或者直接输出将会得到$63\;or\;127$</p>
+<p>其中0x7fffffff，为2147483647</p>
+<p>第三道，飞扬的小鸟</p>
+<p>状态：$f[i][j]$表示横坐标为i时高度为j的最少点击次数</p>
+<p>转移：</p>
+<ul>
+<li>上升的话是完全背包，因为可以一直点</li>
+<li>下降的话，是01背包</li>
+</ul>
+<p>其中转移顺序的话，先升再降，超过m变为m——特判</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/summary/" rel="tag"># summary</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/08/29/8.29/" rel="prev" title="8.29集训">
+                  <i class="fa fa-chevron-left"></i> 8.29集训
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/09/01/9.1/" rel="next" title="9.1集训">
+                  9.1集训 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Youngore</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+      <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = '//cdn.jsdelivr.net/npm/mathjax@3.1.0/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
