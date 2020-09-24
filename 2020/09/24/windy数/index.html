@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -19,7 +19,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"بحث...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
   <meta name="description" content="看到一些dalao写的不浅显易懂，我来补一发较为详细的代码 思想 1.有前缀和的思想  即，我们在$b$那个位置，求出一个1到$b$区间的数目 然后在 $a-1$那里，进行同样的操作，进行运算， 最后的答案就是solve(b) - solve(a-1)  2.这道题是一个数位DP  通常数字都很大，我们可以把他们存到一个数组里，这样访问的时候，访问数组里的数就好了，很方便的（详见代码）  3.我们">
@@ -28,7 +28,7 @@
 <meta property="og:url" content="http://example.com/2020/09/24/windy%E6%95%B0/index.html">
 <meta property="og:site_name" content="Welcome to my blog!">
 <meta property="og:description" content="看到一些dalao写的不浅显易懂，我来补一发较为详细的代码 思想 1.有前缀和的思想  即，我们在$b$那个位置，求出一个1到$b$区间的数目 然后在 $a-1$那里，进行同样的操作，进行运算， 最后的答案就是solve(b) - solve(a-1)  2.这道题是一个数位DP  通常数字都很大，我们可以把他们存到一个数组里，这样访问的时候，访问数组里的数就好了，很方便的（详见代码）  3.我们">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale">
 <meta property="article:published_time" content="2020-09-24T04:06:08.000Z">
 <meta property="article:modified_time" content="2020-09-24T09:19:58.139Z">
 <meta property="article:author" content="Youngore">
@@ -45,7 +45,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'en'
+    lang   : 'zh-Hans'
   };
 </script>
 
@@ -103,7 +103,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
     </div>
   </div>
 
@@ -142,10 +142,10 @@
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          المحتويات
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          عام
         </li>
       </ul>
 
@@ -165,12 +165,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives">
           <span class="site-state-item-count">4</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">المقالات</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
         <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">الوسوم</span>
       </div>
   </nav>
 </div>
@@ -204,7 +204,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/24/windy%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -230,10 +230,10 @@
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Posted on</span>
+      <span class="post-meta-item-text">نُشر في</span>
       
 
-      <time title="Created: 2020-09-24 12:06:08 / Modified: 17:19:58" itemprop="dateCreated datePublished" datetime="2020-09-24T12:06:08+08:00">2020-09-24</time>
+      <time title="أُنشأ: 2020-09-24 12:06:08 / عُدل: 17:19:58" itemprop="dateCreated datePublished" datetime="2020-09-24T12:06:08+08:00">2020-09-24</time>
     </span>
 
   
@@ -349,7 +349,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Youngore</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
     </div>
