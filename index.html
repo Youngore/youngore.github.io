@@ -284,10 +284,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2020-09-24 20:25:39 / Modified: 21:24:13" itemprop="dateCreated datePublished" datetime="2020-09-24T20:25:39+08:00">2020-09-24</time>
+      <time title="Created: 2020-09-24 20:25:39" itemprop="dateCreated datePublished" datetime="2020-09-24T20:25:39+08:00">2020-09-24</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-25 07:04:49" itemprop="dateModified" datetime="2020-09-25T07:04:49+08:00">2020-09-25</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -311,20 +317,15 @@
           <ul>
 <li>一道关于树剖的题</li>
 </ul>
-<p>大致题意：单点修改，区间询问某个颜色有多少个，其中颜色有100个</p>
-<p>考虑对每个点都维护100个数组，每个数组记录每个颜色出现了多少次</p>
-<p>单点修改的话：</p>
-<p>可以按照区间修改来做，其中左端点与右端点都为同一个数字，不用down，但是需要up，up的时候，就是让父节点的颜色数组等于两个儿子节点颜色数组的相加</p>
-<p>区间询问的话：</p>
-<p>跳重链，对每一个链都统计答案</p>
-<p>拓展：一道题叫色板游戏，都是对权值开数组，不过那个题是对一个颜色开一个数组来记录是否出现而不是多少次，在up的时候，应先让父节点的颜色数组都清空，然后再对儿子节点的颜色数组操作</p>
-<ul>
-<li>一道关于双指针的题目</li>
-</ul>
-<p>大致题意：给定四行变量，从四行变量中分别选出1个，使得不超过n，由于多少种选法？</p>
-<p>如果暴力搞，$O(n^4)$，显然不合适</p>
-<p>考虑两两结合来搞</p>
-
+<p>大致题意：单点修改，区间询问某个颜色有多少个，其中颜色有100个<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/24/9.24/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -380,7 +381,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-24 21:24:40" itemprop="dateModified" datetime="2020-09-24T21:24:40+08:00">2020-09-24</time>
+        <time title="Modified: 2020-09-25 07:05:58" itemprop="dateModified" datetime="2020-09-25T07:05:58+08:00">2020-09-25</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -406,18 +407,15 @@
 <li>染色</li>
 </ul>
 <p>一道贪心好题</p>
-<p>可以被hack的贪心思想是：每次都选权值最大的节点</p>
-<p>正确贪心：搞一个综合权值</p>
-<p>每次儿子弄完之后，立马与他的父亲合并</p>
-<ul>
-<li>Vim</li>
-</ul>
-<p>vim相关知识</p>
-<p>vim可以有行号:set nu</p>
-<p>vim在普通模式下键不可以随便按，每个都有不同的功能：</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">w 下一个单词</span><br><span class="line">b 上一个单词</span><br><span class="line">x 删一个</span><br><span class="line">dd 删除一行</span><br><span class="line">ndd 删除n行</span><br><span class="line">gg 跳到开头</span><br><span class="line">G 跳到结尾</span><br><span class="line">nG 跳到第n行</span><br><span class="line">y 复制</span><br><span class="line">yn 复制n行</span><br><span class="line">p 粘贴</span><br><span class="line">ddp 可以交换上下行</span><br><span class="line">0 行首</span><br><span class="line">shift + $ 行尾</span><br><span class="line">i 插入模式</span><br><span class="line">I 在行首插入</span><br><span class="line">A 在行末插入</span><br><span class="line">h j k l</span><br><span class="line">分别上向左 向下 向上 向右</span><br><span class="line">Ctrl + o 跳到上次操作的地方</span><br></pre></td></tr></table></figure>
-<p>养成按ESC的习惯，多在普通模式与插入模式之间切换</p>
-
+<p>可以被hack的贪心思想是：每次都选权值最大的节点<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/23/9.23/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -473,7 +471,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-24 21:24:50" itemprop="dateModified" datetime="2020-09-24T21:24:50+08:00">2020-09-24</time>
+        <time title="Modified: 2020-09-25 07:06:07" itemprop="dateModified" datetime="2020-09-25T07:06:07+08:00">2020-09-25</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -496,48 +494,620 @@
     
     <div class="post-body" itemprop="articleBody">
           <ul>
-<li>透彻pair与map的合理利用来处理重边</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pr;</span><br><span class="line"><span class="built_in">map</span>&lt;pr, <span class="keyword">bool</span>&gt;existd;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">&#123;</span><br><span class="line">	x = read(), y = read();</span><br><span class="line">	<span class="keyword">if</span> (existd[pr(x, y)] == <span class="literal">true</span>) <span class="keyword">continue</span>;</span><br><span class="line">	<span class="keyword">if</span> (x == y) <span class="keyword">continue</span>;</span><br><span class="line">	add_edge(x, y), add_edge(y, x);</span><br><span class="line">	</span><br><span class="line">	existd[pr(x, y)] = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>割点</li>
-</ul>
-<p>割点不需要判断什么儿子父亲</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	int flag(0), i, y;</span><br><span class="line">	dfn[x] = low[x] = ++ num;</span><br><span class="line">	<span class="keyword">for</span> (i = head[x]; i; i = nex[i])</span><br><span class="line">	&#123;</span><br><span class="line">		y = ver[i];</span><br><span class="line">		<span class="keyword">if</span> (! dfn[y])</span><br><span class="line">		&#123;</span><br><span class="line">			tarjan(y);</span><br><span class="line">			low[x] = min(low[x], low[y]);</span><br><span class="line">			<span class="keyword">if</span> (low[y] &gt;= dfn[x])</span><br><span class="line">			&#123;</span><br><span class="line">				++ flag;</span><br><span class="line">				<span class="keyword">if</span> (x != root || flag &gt; <span class="number">1</span>) cut[x] = <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> low[x] = min(low[x], dfn[y]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>if (x != root || flag &gt; 1) cut[x] = true;</p>
-<p>很巧妙的一句话，考虑if不成立的条件，x不为root，并且flag大于1</p>
-<ul>
-<li>割边</li>
-</ul>
-<p>需要来判断另一条边</p>
-<p>令cnt从2开始计数</p>
-<p>2 XOR 1 = 3，3 XOR 1 = 2</p>
-<ul>
-<li>曾经做过的一道原题，见7.30</li>
-</ul>
-<p>其中t数组的运用太niub了</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">fuck</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j, l, r, tot;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) f[i] = g[i] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= n; ++ j)</span><br><span class="line">		&#123;</span><br><span class="line">			sum[i][j] = a[i][j];</span><br><span class="line">			sum[i][j] += sum[i][j - <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (l = <span class="number">1</span>; l &lt;= n; ++ l)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (r = l; r &lt;= n; ++ r)</span><br><span class="line">		&#123;</span><br><span class="line">			tot = <span class="number">0</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; p; ++ i) t[i] = <span class="number">-1</span>;</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">			&#123;</span><br><span class="line">				tot += sum[i][r] - sum[i][l - <span class="number">1</span>];</span><br><span class="line">				tot %= p;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span> (t[tot] != <span class="number">-1</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					f[r] = max(f[r], (r - l + <span class="number">1</span>) * (i - t[tot]));</span><br><span class="line">					g[l] = max(g[l], (r - l + <span class="number">1</span>) * (i - t[tot]));</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> t[tot] = i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; -- i) g[i] = max(g[i], g[i + <span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; ++ i) res = max(res, f[i] + g[i + <span class="number">1</span>]);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>关于旋转矩形那里，直接swap就得了</p>
-<ul>
-<li>考试题</li>
-</ul>
-<p>大致题意：<br>每次可以选择一行或者一列加上1，令3，6，9，12为好数，问最多可以有多少个好数？</p>
-<p>一道考试题的暴力思路</p>
-<p>首先对所有数字mod3，因为我们只需要知道这个数字变为3的倍数需要加上几最后对这个矩阵扫一遍，统计零的个数就是答案</p>
-<p>对同一个数字在某一行或者某一列记录他出现的次数，对于出现最多次数的数字，判断其与当前行（或者列）零出现的次数</p>
-<p>如果比零出现的次数多，说明使得这一行（或者列）出现次数最多的数字变为0（也就是成为3的倍数）之后，得到的0比原来更多<br>反之就不操作</p>
-<p>do_while什么时候结束？就是当所有行或者列里面，零出现的次数都是最多的，也就意味着再进行操作就不优了</p>
-<p>这种做法在数值属于[1,12]期间的时候，是可以AC的</p>
-<p>但是他的数值可以变为负数，可以大于12</p>
-<p>正解是搜索</p>
-<ul>
-<li>另一道考试题目</li>
-</ul>
-<p>在维护最大值的时候</p>
-<p>多考虑优先队列大根堆</p>
-<p>其中如果需要查找前后值的话，考虑链表</p>
-<p>其中维护链表的时候，总之务必搞清楚先nex还是pre</p>
+<li><p>透彻pair与map的合理利用来处理重边</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/22/9.22/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/21/9.21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="此去泉台招旧部，旌旗十万斩阎罗">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/21/9.21/" class="post-title-link" itemprop="url">9.21集训</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-21 21:30:30" itemprop="dateCreated datePublished" datetime="2020-09-21T21:30:30+08:00">2020-09-21</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-25 07:06:12" itemprop="dateModified" datetime="2020-09-25T07:06:12+08:00">2020-09-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">总结</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>今天上午改题<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/21/9.21/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/21/CF888E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="此去泉台招旧部，旌旗十万斩阎罗">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/21/CF888E/" class="post-title-link" itemprop="url">CF888E</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-21 12:06:08" itemprop="dateCreated datePublished" datetime="2020-09-21T12:06:08+08:00">2020-09-21</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-25 07:10:40" itemprop="dateModified" datetime="2020-09-25T07:10:40+08:00">2020-09-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF888E">click</a></p>
+<p>今天听了钟皓曦大神的讲解，扫了一眼题解区，大家都是在论述折半搜索<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/21/CF888E/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/20/9.20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="此去泉台招旧部，旌旗十万斩阎罗">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/20/9.20/" class="post-title-link" itemprop="url">9.20集训</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-20 21:30:30" itemprop="dateCreated datePublished" datetime="2020-09-20T21:30:30+08:00">2020-09-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-25 07:06:18" itemprop="dateModified" datetime="2020-09-25T07:06:18+08:00">2020-09-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">总结</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>9.14~9.20</p>
+<p>搁置了一周的总结<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/20/9.20/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/20/%E6%8E%92%E9%98%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="此去泉台招旧部，旌旗十万斩阎罗">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/20/%E6%8E%92%E9%98%9F/" class="post-title-link" itemprop="url">排队</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-20 12:06:39" itemprop="dateCreated datePublished" datetime="2020-09-20T12:06:39+08:00">2020-09-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-25 07:11:23" itemprop="dateModified" datetime="2020-09-25T07:11:23+08:00">2020-09-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>他们写的都好复杂<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/20/%E6%8E%92%E9%98%9F/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/19/windy%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="此去泉台招旧部，旌旗十万斩阎罗">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/19/windy%E6%95%B0/" class="post-title-link" itemprop="url">windy数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-19 12:06:08" itemprop="dateCreated datePublished" datetime="2020-09-19T12:06:08+08:00">2020-09-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-25 07:10:57" itemprop="dateModified" datetime="2020-09-25T07:10:57+08:00">2020-09-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>看到一些dalao写的不浅显易懂，我来补一发较为详细的代码<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/19/windy%E6%95%B0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/18/Moo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="此去泉台招旧部，旌旗十万斩阎罗">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/18/Moo/" class="post-title-link" itemprop="url">Moo</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-18 17:25:39" itemprop="dateCreated datePublished" datetime="2020-09-18T17:25:39+08:00">2020-09-18</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-25 07:10:44" itemprop="dateModified" datetime="2020-09-25T07:10:44+08:00">2020-09-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1885">click</a></p>
+<p>一道与<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5657">格雷码</a>类似的题目<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/18/Moo/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/14/9.14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="此去泉台招旧部，旌旗十万斩阎罗">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/14/9.14/" class="post-title-link" itemprop="url">9.14集训</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-14 21:30:30" itemprop="dateCreated datePublished" datetime="2020-09-14T21:30:30+08:00">2020-09-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-25 07:06:22" itemprop="dateModified" datetime="2020-09-25T07:06:22+08:00">2020-09-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">总结</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>今天做了几道数学题<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/14/9.14/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -557,7 +1127,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
