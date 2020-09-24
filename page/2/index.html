@@ -133,17 +133,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags" rel="section"><i class="fa fa-tag fa-fw"></i>Tags<span class="badge">13</span></a>
+    <a href="/tags" rel="section"><i class="fa fa-tag fa-fw"></i>Tags<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">5</span></a>
+    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">29</span></a>
+    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">35</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -195,20 +195,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -257,7 +257,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/23/9.23/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/21/CF888E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
@@ -274,7 +274,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/23/9.23/" class="post-title-link" itemprop="url">9.23</a>
+            <a href="/2020/09/21/CF888E/" class="post-title-link" itemprop="url">CF888E</a>
         </h2>
 
         <div class="post-meta-container">
@@ -285,14 +285,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2020-09-23 22:06:08" itemprop="dateCreated datePublished" datetime="2020-09-23T22:06:08+08:00">2020-09-23</time>
+      <time title="Created: 2020-09-21 12:06:08" itemprop="dateCreated datePublished" datetime="2020-09-21T12:06:08+08:00">2020-09-21</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-24 21:24:40" itemprop="dateModified" datetime="2020-09-24T21:24:40+08:00">2020-09-24</time>
+        <time title="Modified: 2020-09-24 21:23:24" itemprop="dateModified" datetime="2020-09-24T21:23:24+08:00">2020-09-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -300,7 +300,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">总结</span></a>
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
         </span>
     </span>
 
@@ -314,21 +314,232 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>染色</li>
-</ul>
-<p>一道贪心好题</p>
-<p>可以被hack的贪心思想是：每次都选权值最大的节点</p>
-<p>正确贪心：搞一个综合权值</p>
-<p>每次儿子弄完之后，立马与他的父亲合并</p>
+          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF888E">click</a></p>
+<p>今天听了钟皓曦大神的讲解，扫了一眼题解区，大家都是在论述折半搜索</p>
+<p>但是对于排完序之后的数组，进行互相匹配的时候，几乎说的都不是太透彻（个人观点，随便来喷）</p>
+<p>于是我决定写一篇较为详细且严谨的题解</p>
+<p>考虑当前有一个p属于对于前一半进行dfs得到的数组里面的一个数字，</p>
+<p>考虑当前有一个q属于对于后一半进行dfs得到的数组里面的一个数字，</p>
+<p>显然，我们知道：$p&lt;m,q&lt;m$，因此可以推出$p+q&lt;2\times m$</p>
+<p>我们也知道我们的答案是$(p+q)\;mod\;m$，因此需要来讨论$p+q$的大小对m造成的影响</p>
+<p>第一种情况：</p>
 <ul>
-<li>Vim</li>
+<li>$m&lt;p+q&lt;2\times m$</li>
+<li>此时显然$p+q$往大里取最好，因为取的值越大，在$mod\;m$之后所得到的结果越大</li>
 </ul>
-<p>vim相关知识</p>
-<p>vim可以有行号:set nu</p>
-<p>vim在普通模式下键不可以随便按，每个都有不同的功能：</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">w 下一个单词</span><br><span class="line">b 上一个单词</span><br><span class="line">x 删一个</span><br><span class="line">dd 删除一行</span><br><span class="line">ndd 删除n行</span><br><span class="line">gg 跳到开头</span><br><span class="line">G 跳到结尾</span><br><span class="line">nG 跳到第n行</span><br><span class="line">y 复制</span><br><span class="line">yn 复制n行</span><br><span class="line">p 粘贴</span><br><span class="line">ddp 可以交换上下行</span><br><span class="line">0 行首</span><br><span class="line">shift + $ 行尾</span><br><span class="line">i 插入模式</span><br><span class="line">I 在行首插入</span><br><span class="line">A 在行末插入</span><br><span class="line">h j k l</span><br><span class="line">分别上向左 向下 向上 向右</span><br><span class="line">Ctrl + o 跳到上次操作的地方</span><br></pre></td></tr></table></figure>
-<p>养成按ESC的习惯，多在普通模式与插入模式之间切换</p>
+<p>第二种情况：</p>
+<ul>
+<li>$p+q&lt;m$</li>
+<li>$O(n^2)$匹配来找答案，显然不优，此时需要搞一个双指针来优化</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sort(sum1 + <span class="number">1</span>, sum1 + cnt1 + <span class="number">1</span>), sort(sum2 + <span class="number">1</span>, sum2 + cnt2 + <span class="number">1</span>);</span><br><span class="line">l = cnt1, r = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (r = <span class="number">1</span>; r &lt;= cnt2; ++ r)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">while</span> (sum1[l] + sum2[r] &gt;= mod) -- l;</span><br><span class="line">   res = max(res, sum1[l] + sum2[r]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将两个数组排序，初始化的时候l指向sum1数组的末尾（最大值），r指向sum2数组的开头（最小值）</p>
+<p>考虑对于sum2数组中的每一个数字，在sum1中找到某一个数字，使得两者加起来在小于m的情况下最大</p>
+<p>具体实现见代码。</p>
+<p>此外，给出证明：由于sum1与sum2数组是递增序列，所以一遍扫过来，找到的一定是最优解</p>
+<p>如果$sum1[l] + sum2[r]&gt;m$，显然，$sum1[l] +sum2[r+1]$也一定是大于m的，l递减显然没有问题</p>
+<p>代码给出:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">//东方之珠 整夜未眠！</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e7</span>+<span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> cnt1, cnt2, n, mid, m;</span><br><span class="line"><span class="keyword">int</span> sum1[N], sum2[N], a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> sum)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (now &gt; mid) &#123;sum1[++ cnt1] = sum; <span class="keyword">return</span>;&#125;</span><br><span class="line">   dfs1(now + <span class="number">1</span>, sum);</span><br><span class="line">   dfs1(now + <span class="number">1</span>, (sum + a[now]) % m);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> sum)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (now &gt; n) &#123;sum2[++ cnt2] = sum; <span class="keyword">return</span>;&#125;</span><br><span class="line">   dfs2(now + <span class="number">1</span>, sum);</span><br><span class="line">   dfs2(now + <span class="number">1</span>, (sum + a[now]) % m); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">thestars</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> i, l, r, res(<span class="number">0</span>);</span><br><span class="line">   <span class="built_in">scanf</span> (<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">   <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) <span class="built_in">scanf</span> (<span class="string">&quot;%d&quot;</span>, a + i), a[i] %= m;</span><br><span class="line">   mid = (n &gt;&gt; <span class="number">1</span>);</span><br><span class="line">   dfs1(<span class="number">1</span>, <span class="number">0</span>), dfs2(mid + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">   sort(sum1 + <span class="number">1</span>, sum1 + cnt1 + <span class="number">1</span>), sort(sum2 + <span class="number">1</span>, sum2 + cnt2 + <span class="number">1</span>);</span><br><span class="line">   l = cnt1, r = <span class="number">1</span>;</span><br><span class="line">   <span class="keyword">for</span> (r = <span class="number">1</span>; r &lt;= cnt2; ++ r)</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">while</span> (sum1[l] + sum2[r] &gt;= m) -- l;</span><br><span class="line">      res = max(res, sum1[l] + sum2[r]);</span><br><span class="line">   &#125;</span><br><span class="line">   res = max(res, (sum1[cnt1] + sum2[cnt2]) % m);</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> youngore = thestars();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;;&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/20/%E6%8E%92%E9%98%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="a OIer from HE">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/20/%E6%8E%92%E9%98%9F/" class="post-title-link" itemprop="url">排队</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-20 12:06:39" itemprop="dateCreated datePublished" datetime="2020-09-20T12:06:39+08:00">2020-09-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-24 21:21:35" itemprop="dateModified" datetime="2020-09-24T21:21:35+08:00">2020-09-24</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>他们写的都好复杂</p>
+<p>什么谁隔开谁的。。。</p>
+<p>麻烦！</p>
+<p>老师不相邻=不考虑老师相邻-老师相邻</p>
+<ul>
+<li>不考虑老师相邻</li>
+</ul>
+<p>显然老师与男同学等价，用插空法解决</p>
+<script type="math/tex; mode=display">A_{n+2}^{n+2}\times A_{m}^{m}\times C_{n+3}^{m}</script><p>其中C中的$n+3$是因为有$n+2$个人，故有$n+3$个空</p>
+<ul>
+<li>老师相邻</li>
+</ul>
+<p>用捆绑法，两名老师<strong>整体</strong>与男同学等价，同样用插空法答案显然为</p>
+<script type="math/tex; mode=display">A_2^2\times A_{n+1}^{n+1}\times A_m^m\times C_{n+2}^m</script><p>二者做差就是答案</p>
+<p>End…</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/19/windy%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="a OIer from HE">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/19/windy%E6%95%B0/" class="post-title-link" itemprop="url">windy数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-19 12:06:08" itemprop="dateCreated datePublished" datetime="2020-09-19T12:06:08+08:00">2020-09-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-24 21:22:39" itemprop="dateModified" datetime="2020-09-24T21:22:39+08:00">2020-09-24</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>看到一些dalao写的不浅显易懂，我来补一发较为详细的代码</p>
+<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><ul>
+<li>1.有前缀和的思想</li>
+</ul>
+<p>即，我们在$b$那个位置，求出一个1到$b$区间的数目</p>
+<p>然后在 $a-1$那里，进行同样的操作，进行运算，</p>
+<p>最后的答案就是solve(b) - solve(a-1)</p>
+<ul>
+<li>2.这道题是一个数位DP</li>
+</ul>
+<p>通常数字都很大，我们可以把他们存到一个数组里，这样访问的时候，访问数组里的数就好了，很方便的（详见代码）</p>
+<ul>
+<li>3.我们拆分完成后，就到了展示高端操作的时候</li>
+</ul>
+<p>蒟蒻觉得那些dalao写的过于抽象，便使用了记忆化搜索</p>
+<p>（其实记忆化搜索与循环嵌套做出来的dp时间复杂度是一样的，只不过，记忆化搜素可能会比较直观，但代码量长一些）</p>
+<p>先把这个dfs的代码贴出来</p>
+<p>dfs中有四个参数</p>
+<p><strong>pos表示当前搜索到哪一位</strong></p>
+<p><strong>pre表示前驱，即自己的上一位是谁</strong></p>
+<p><strong>flg表示当前所搜到的这种情况，其数字是否能够与原先的数匹配上</strong></p>
+<p>举个例子，一个数123456，我们枚举到1234，这是的flg就为1</p>
+<p><strong>zero的含义有两种，是相反的，我都有AC代码，大家可以去看</strong></p>
+<p><strong>第一种是zero为1，表示没有前导零，反过来，zero为零，表示有前导零（我下面的dfs就是用的这个含义，刚刚进入的时候，为dfs（当前num的位数，0, 1, 0）     ）</strong></p>
+<p><strong>第二种是zero为0，表示有前导零，反过来，zero为0，表示没有前导零，这时“初代”dfs的参数分别为（当前num的位数，0, 1, 1），当然二者还有一些细节在代码中</strong></p>
+<p><strong>$f[i][j]$表示搜到第$i$位，在前驱是$j$的情况下，的最多方案数目</strong> </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">dfs</span> <span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> pre, <span class="keyword">int</span> flg, <span class="keyword">int</span> zero)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!pos) <span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//我位数为零了，自然就return了</span></span><br><span class="line">    <span class="comment">//有同学要问了，为什么pos等于零了，我们就可以返回1？</span></span><br><span class="line">    <span class="comment">//我们的dfs每一次搜索，都是在保证合法的情况下</span></span><br><span class="line">    <span class="comment">//如果某种情况不合法，是根本不会进入到pos为零这个阶段</span></span><br><span class="line">	<span class="keyword">if</span> (!flg &amp;&amp; f[pos][pre]!=<span class="number">-1</span>&amp;&amp;zero) <span class="keyword">return</span> f[pos][pre];</span><br><span class="line">    <span class="comment">//典型的记忆化，如果f数组以前更新过，且当前没有前导零，我们下一次拿来直接用就好了</span></span><br><span class="line">	<span class="keyword">int</span> net, tot(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    tot是来记录答案的，net是来抉择自己下一个可以选成什么</span></span><br><span class="line"><span class="comment">    这里有这么一个坑点，假如原数是123456</span></span><br><span class="line"><span class="comment">    我们当前搜到123，那继续搜的话，后三位是不是一定要小于456？</span></span><br><span class="line"><span class="comment">    因为我们不可能比原数还要大对吧</span></span><br><span class="line"><span class="comment">    而假如我们搜到122，那后面我们即使是999，是不是依旧小于原数123456？</span></span><br><span class="line"><span class="comment">    （姑且不考虑搜到的这个情况是否合法）</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    来看代码，当flg等于1，意味着前边的数，和自己已经搜到的一样，</span></span><br><span class="line"><span class="comment">    那么我们下一位可选的最大数是不是就是原数中的那一位？</span></span><br><span class="line"><span class="comment">    同样，我们举个例子（都是在默认原数是123456的前提下）</span></span><br><span class="line"><span class="comment">    当前搜到123，发现flg等于一（因为123456的前三位与123的前三位是相匹配的）</span></span><br><span class="line"><span class="comment">    那我们的net（上限）最大为原数中的那一位，在这里是4</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">   如果当前搜到122，发现flg等于零，</span></span><br><span class="line"><span class="comment">   意味着自己与原数不一样</span></span><br><span class="line"><span class="comment">   那既然不一样，那一定是之前的某个高位比原数小，</span></span><br><span class="line"><span class="comment">   既然高位都比原数小了，后边无论怎么操作，都不会大于原数</span></span><br><span class="line"><span class="comment">   而每一位数字的上限是9，我们给它定位最大值9就可以了</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">	<span class="keyword">if</span> (flg) net = num[pos];</span><br><span class="line">	<span class="keyword">else</span> net = <span class="number">9</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= net; ++ i) &#123;</span><br><span class="line">		<span class="keyword">int</span> cha = <span class="built_in">abs</span> (pre-i);</span><br><span class="line">        	<span class="comment">//找差值，判断</span></span><br><span class="line">		<span class="keyword">if</span> (cha&lt;<span class="number">2</span> &amp;&amp; zero);</span><br><span class="line">        	<span class="comment">/*注意我这里有一个分号</span></span><br><span class="line"><span class="comment">            即if (cha&lt;2 &amp;&amp; zero)成立之后，不会进行任何操作</span></span><br><span class="line"><span class="comment">            这个if是说，差值小于2，并且前边没有前导零</span></span><br><span class="line"><span class="comment">            判断有没有前导零的判断很关键</span></span><br><span class="line"><span class="comment">            我们假定搜到一个数1 其实能这个1实际上是“00001”（前面具体多少个零我也不知道）</span></span><br><span class="line"><span class="comment">            而我们来看 501</span></span><br><span class="line"><span class="comment">           	抛开这个if不说，我们知道501不是windy数，而1是.那我们回归到if上</span></span><br><span class="line"><span class="comment">            001和501同时满足cha &lt; 2,但是对于001却不满足zero为1的情况，所以001不会进这个if而501会进入，501就被“过滤”了</span></span><br><span class="line"><span class="comment">            这是最简单的一种情况</span></span><br><span class="line"><span class="comment">	        */</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (i == net&amp;&amp;flg) tot += dfs (pos<span class="number">-1</span>, i, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        if (i==net&amp;&amp;flg)</span></span><br><span class="line"><span class="comment">        这是在判断，下一位要选的数是不是到达了上限，且是否与原数匹配</span></span><br><span class="line"><span class="comment">        如果发现已经到了上限（我们姑且不论那个上限是9还是原数中的某一位）</span></span><br><span class="line"><span class="comment">       	那我们可以继续搜下一层，位数要减1，前驱即为i，flg为1，</span></span><br><span class="line"><span class="comment">        而最后的参数zero为什么会是1呢？</span></span><br><span class="line"><span class="comment">        大家来想一下，首先我们的原数（最开始被拆分的那个数）非零</span></span><br><span class="line"><span class="comment">        而我们现在枚举到的这个数，能与原数匹配</span></span><br><span class="line"><span class="comment">        那么这个被枚举（或者叫“搜索”）到的数，就一定也非零</span></span><br><span class="line"><span class="comment">        自然，zero为1</span></span><br><span class="line"><span class="comment">        （zero的含义为第一种，不清楚的自己去上面扒拉）</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (i!=<span class="number">0</span> || zero) tot += dfs (pos<span class="number">-1</span>, i, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            这个if中是“或”的条件</span></span><br><span class="line"><span class="comment">            即只要满足当前枚举到的下一位不是0,或者zero为1（即表示没有前导零）就可以继续跑dfs</span></span><br><span class="line"><span class="comment">            这里有个问题，flg为什么是0.大家来考虑i这个循环</span></span><br><span class="line"><span class="comment">            i是从1循环到上限net的，我们前边提到过，net只能是9或者原数中的一位</span></span><br><span class="line"><span class="comment">            假如net为9，那么我们的flg已经是0了，</span></span><br><span class="line"><span class="comment">            因为net等于9其成立条件就是flg为零</span></span><br><span class="line"><span class="comment">            假如net为原数中一位，那假如我们当前枚举的下一位不是原数中的那个数（上限）（net）</span></span><br><span class="line"><span class="comment">            那我们自然是flg为0，假如到了上限，并且flg前面是1，（这是上一个if干的活了）</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">			<span class="keyword">else</span> tot += dfs (pos<span class="number">-1</span>, i, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">           	<span class="comment">/*</span></span><br><span class="line"><span class="comment">            这个else成立的条有两个</span></span><br><span class="line"><span class="comment">            第一个，i不等于0;第二个，zero是零</span></span><br><span class="line"><span class="comment">            就是说，当前要枚举的下一位是0，并且自己前边是有前导零的，所以dfs的参数zero才为0</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (!flg &amp;&amp; zero) f[pos][pre] = tot;</span><br><span class="line">    	<span class="comment">//保存答案，方便以后使用</span></span><br><span class="line">        <span class="comment">//这里对应上面的记忆化，在一定条件下时记录，保证一致性</span></span><br><span class="line">	<span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面贴一下完整代码</p>
+<p>zero第一种含义的代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">By TheStars</span></span><br><span class="line"><span class="comment">Time:2020.03.09</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 330</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a, b, cnt;</span><br><span class="line"><span class="keyword">int</span> num[N];</span><br><span class="line"><span class="keyword">int</span> f[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">dfs</span> <span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> pre, <span class="keyword">int</span> flg, <span class="keyword">int</span> zero)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!pos) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (!flg &amp;&amp; f[pos][pre]!=<span class="number">-1</span>&amp;&amp;zero) <span class="keyword">return</span> f[pos][pre];</span><br><span class="line">	<span class="keyword">int</span> net, tot(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">if</span> (flg) net = num[pos];</span><br><span class="line">	<span class="keyword">else</span> net = <span class="number">9</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= net; ++ i) &#123;</span><br><span class="line">		<span class="keyword">int</span> cha = <span class="built_in">abs</span> (pre-i);</span><br><span class="line">		<span class="keyword">if</span> (cha&lt;<span class="number">2</span> &amp;&amp; zero);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (i == net&amp;&amp;flg) tot += dfs (pos<span class="number">-1</span>, i, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (i!=<span class="number">0</span> || zero) tot += dfs (pos<span class="number">-1</span>, i, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">else</span> tot += dfs (pos<span class="number">-1</span>, i, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (!flg &amp;&amp; zero) f[pos][pre] = tot;</span><br><span class="line">	<span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">work</span> <span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span> (f, <span class="number">-1</span>, <span class="keyword">sizeof</span> f);</span><br><span class="line">	cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (x) num[++cnt] = x%<span class="number">10</span>, x /= <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">return</span> dfs (cnt, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span> (<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">	<span class="keyword">int</span> one = work (b);</span><br><span class="line">	<span class="keyword">int</span> two = work (a<span class="number">-1</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; one - two;</span><br><span class="line">	fclose (<span class="built_in">stdin</span>), fclose (<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>zero第二种含义的代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">By TheStars</span></span><br><span class="line"><span class="comment">Time:2020.03.09</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 330</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a, b, cnt;</span><br><span class="line"><span class="keyword">int</span> num[N];</span><br><span class="line"><span class="keyword">int</span> f[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">dfs</span> <span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> pre, <span class="keyword">int</span> flg, <span class="keyword">int</span> zero)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!pos) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (!flg &amp;&amp; f[pos][pre]!=<span class="number">-1</span>&amp;&amp;!zero) <span class="keyword">return</span> f[pos][pre];</span><br><span class="line">    <span class="keyword">int</span> net, tot(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">if</span> (flg) net = num[pos];</span><br><span class="line">	<span class="keyword">else</span> net = <span class="number">9</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= net; ++ i) &#123;</span><br><span class="line">		<span class="keyword">int</span> cha = <span class="built_in">abs</span> (pre-i);</span><br><span class="line">		<span class="keyword">if</span> (cha&lt;<span class="number">2</span> &amp;&amp; !zero);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (i == net&amp;&amp;flg) tot += dfs (pos<span class="number">-1</span>, i, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (i!=<span class="number">0</span> || !zero) tot += dfs (pos<span class="number">-1</span>, i, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">			<span class="keyword">else</span> tot += dfs (pos<span class="number">-1</span>, i, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (!flg &amp;&amp; !zero) f[pos][pre] = tot;</span><br><span class="line">	<span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">work</span> <span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span> (f, <span class="number">-1</span>, <span class="keyword">sizeof</span> f);</span><br><span class="line">	cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (x) num[++cnt] = x%<span class="number">10</span>, x /= <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">return</span> dfs (cnt, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span> (<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">	<span class="keyword">int</span> one = work (b);</span><br><span class="line">	<span class="keyword">int</span> two = work (a<span class="number">-1</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; one - two;</span><br><span class="line">	fclose (<span class="built_in">stdin</span>), fclose (<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -349,7 +560,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
