@@ -4244,4 +4244,35 @@ while (T > 1e-6)
         <tag>summary</tag>
       </tags>
   </entry>
+  <entry>
+    <title>9.25</title>
+    <url>/2020/09/25/9.25/</url>
+    <content><![CDATA[<p> 今天考试了，顺带做了几道以前遗留的题目</p>
+<a id="more"></a>
+<ul>
+<li>考试题</li>
+</ul>
+<p>有 n+1 艘船，告诉你每艘船距离终点的长度、船身的长度和最高行驶速度。在行驶的过程中不允许超越（即后面的船最多也只能 船头贴着前一辆船的船尾，然后以同样的速度前进），问这些船均驶过终点需要多长时间</p>
+<p>就是一个sb模拟或者说是贪心题</p>
+<p>t要取max</p>
+<ul>
+<li>选择数字</li>
+</ul>
+<p>给定一行n个非负整数a[1]..a[n]。现在你可以选择其中若干个数，但不能有超过k个连续的数字被选择。你的任务是使得选出的数字的和最大</p>
+<p>转移式子好推，但是需要单调队列优化来求出最大值</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">fuck</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	d[x] = f[x - <span class="number">1</span>] - sum[x];</span><br><span class="line">	<span class="keyword">while</span> (l &lt;= r &amp;&amp; q[l] + k &lt; x) ++ l;</span><br><span class="line">	<span class="keyword">while</span> (l &lt;= r &amp;&amp; d[x] &gt; d[q[r]]) -- r;</span><br><span class="line">	q[++ r] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	n = read(), k = read();</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x = read();</span><br><span class="line">		sum[i] = sum[i - <span class="number">1</span>] + x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">	&#123;</span><br><span class="line">		fuck(i);</span><br><span class="line">		f[i] = d[q[l]] + sum[i];</span><br><span class="line">	&#125;</span><br><span class="line">	put(f[n]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>GCD</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i ++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j = i * <span class="number">2</span>; j &lt; N; j += i)</span><br><span class="line">		f[j] += i * phi[j / i]; </span><br></pre></td></tr></table></figure>
+<p>我们考虑什么时候因子x会加贡献，当n为x的倍数的时候就又会产生贡献，就像上边那样</p>
+<p>构造前缀和就可</p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>summary</tag>
+      </tags>
+  </entry>
 </search>
