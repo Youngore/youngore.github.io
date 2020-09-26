@@ -4275,4 +4275,23 @@ while (T > 1e-6)
         <tag>summary</tag>
       </tags>
   </entry>
+  <entry>
+    <title>9.26</title>
+    <url>/2020/09/26/9.26/</url>
+    <content><![CDATA[<p>上午改题加透彻树形dp</p>
+<p>树形dp的最小点覆盖与最小边覆盖大有千秋</p>
+<a id="more"></a>
+<p>最小点覆盖：显然只需要考虑一个点是由他儿子还是他自己覆盖的就可以</p>
+<p>而最小边覆盖要考虑：这条边</p>
+<p>其中最小边覆盖，一定包含所有边与点</p>
+<p>而最小点覆盖，一定包含所有点，但是不一定包含所有边，例子不难举出反例</p>
+<p>P2016的题是需要全部边被占，包含全部点被占的情况，而这个题并不一定所有边都会被占</p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>summary</tag>
+      </tags>
+  </entry>
 </search>
