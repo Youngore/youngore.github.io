@@ -144,7 +144,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">88</span></a>
+    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">89</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -223,7 +223,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives">
         
-          <span class="site-state-item-count">88</span>
+          <span class="site-state-item-count">89</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -281,6 +281,89 @@
       
 
       
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/06/28/%E6%90%9C%E7%B4%A2%E5%B0%8F%E7%BB%83#8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
+      <meta itemprop="name" content="Youngore">
+      <meta itemprop="description" content="此去泉台招旧部，旌旗十万斩阎罗">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/28/%E6%90%9C%E7%B4%A2%E5%B0%8F%E7%BB%83#8/" class="post-title-link" itemprop="url">搜索小练#8</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-06-28 12:06:39" itemprop="dateCreated datePublished" datetime="2020-06-28T12:06:39+08:00">2020-06-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-25 07:12:35" itemprop="dateModified" datetime="2020-09-25T07:12:35+08:00">2020-09-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%90%9C%E7%B4%A2%E5%B0%8F%E7%BB%83/" itemprop="url" rel="index"><span itemprop="name">搜索小练</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <a id="more"></a>
+<p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/POJ-3414#author=cxsys_">题目</a></p>
+<p>这里很容易想到广搜，设初始状态为$(i,j)$，一共就只有六种变化</p>
+<p>A杯倒满，B杯倒满，A杯倒出完，B杯倒出完，A到给B，B到给A</p>
+<p>任意一种状态$i$ 或者 $j$达到 $C$ 就停止，注意要打印路径，我这里用一个string存的操作顺序。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e2</span>+<span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a, b, c;</span><br><span class="line"><span class="keyword">int</span> v[N][N];</span><br><span class="line"><span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line"><span class="built_in">string</span> str[<span class="number">10</span>] = &#123;<span class="string">&quot;&quot;</span>, <span class="string">&quot;FILL(1)&quot;</span>, <span class="string">&quot;FILL(2)&quot;</span>, <span class="string">&quot;DROP(1)&quot;</span>, <span class="string">&quot;DROP(2)&quot;</span>, <span class="string">&quot;POUR(1,2)&quot;</span>,<span class="string">&quot;POUR(2,1)&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> x, y, step; <span class="built_in">string</span> s;</span><br><span class="line">	node (<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> step, <span class="built_in">string</span> s):x(x), y(y), step(step),s(s)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">bfs</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">queue</span>&lt;node&gt;q;</span><br><span class="line">	v[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	q.push(node(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">&quot;0&quot;</span>));</span><br><span class="line">	<span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">	    <span class="comment">/* code */</span></span><br><span class="line">		node tmp = q.front(); q.pop();</span><br><span class="line">		<span class="keyword">if</span> (tmp.x == c || tmp.y == c) &#123;</span><br><span class="line">			flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; tmp.step &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; tmp.s.length(); ++ i)</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; str[tmp.s[i]-<span class="string">&#x27;0&#x27;</span>] &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (tmp.x &lt; a)</span><br><span class="line">			<span class="keyword">if</span> (!v[a][tmp.y])</span><br><span class="line">				v[a][tmp.y] = <span class="number">1</span>, q.push(node(a, tmp.y, tmp.step+<span class="number">1</span>, tmp.s+<span class="string">&quot;1&quot;</span>));</span><br><span class="line">		<span class="keyword">if</span> (tmp.y &lt; b)</span><br><span class="line">			<span class="keyword">if</span> (!v[tmp.x][b])</span><br><span class="line">				v[tmp.x][b] = <span class="number">1</span>, q.push(node(tmp.x, b, tmp.step+<span class="number">1</span>, tmp.s+<span class="string">&quot;2&quot;</span>));</span><br><span class="line">		<span class="keyword">if</span> (tmp.x != <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">if</span> (!v[<span class="number">0</span>][tmp.y])</span><br><span class="line">				v[<span class="number">0</span>][tmp.y] = <span class="number">1</span>, q.push(node(<span class="number">0</span>, tmp.y, tmp.step+<span class="number">1</span>, tmp.s+<span class="string">&quot;3&quot;</span>));</span><br><span class="line">		<span class="keyword">if</span> (tmp.y != <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">if</span> (!v[tmp.x][<span class="number">0</span>])</span><br><span class="line">				v[tmp.x][<span class="number">0</span>] = <span class="number">1</span>, q.push(node(tmp.x, <span class="number">0</span>, tmp.step+<span class="number">1</span>, tmp.s+<span class="string">&quot;4&quot;</span>));</span><br><span class="line">		<span class="keyword">if</span> (tmp.x != <span class="number">0</span> &amp;&amp; tmp.y &lt; b) &#123;</span><br><span class="line">			<span class="keyword">int</span> nx, ny;</span><br><span class="line">			<span class="keyword">if</span> (tmp.x &lt;= b-tmp.y) nx = <span class="number">0</span>, ny = tmp.x+tmp.y;</span><br><span class="line">			<span class="keyword">else</span> nx = tmp.x+tmp.y-b, ny = b;</span><br><span class="line">			<span class="keyword">if</span> (!v[nx][ny]) </span><br><span class="line">				v[nx][ny] = <span class="number">1</span>, q.push(node(nx, ny, tmp.step+<span class="number">1</span>, tmp.s+<span class="string">&quot;5&quot;</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (tmp.y != <span class="number">0</span> &amp;&amp; tmp.x &lt; a) &#123;</span><br><span class="line">			<span class="keyword">int</span> nx, ny;</span><br><span class="line">			<span class="keyword">if</span> (tmp.y &lt;= a-tmp.x) nx = tmp.x+tmp.y, ny = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">else</span> nx = a, ny = tmp.x+tmp.y-a;</span><br><span class="line">			<span class="keyword">if</span> (!v[nx][ny]) </span><br><span class="line">				v[nx][ny] = <span class="number">1</span>, q.push(node(nx, ny, tmp.step+<span class="number">1</span>, tmp.s+<span class="string">&quot;6&quot;</span>));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">	bfs ();</span><br><span class="line"> 	<span class="keyword">if</span> (!flag) <span class="built_in">puts</span> (<span class="string">&quot;impossible&quot;</span>);	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
       
   
   
