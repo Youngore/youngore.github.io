@@ -2917,7 +2917,7 @@ while (T > 1e-6)
   <entry>
     <title>message</title>
     <url>/2020/09/28/message/</url>
-    <content><![CDATA[<p>题目大意：一个数字由两个字符串 a 和 b 表达，这个数字就是 b 在 a 中匹配的位置。比如，a=”abcd”，b=”c”，那么这个数字就是 3。</p>
+    <content><![CDATA[<p>题目大意：一个数字由两个字符串 a 和 b 表达，这个数字就是 b 在 a 中匹配的位置。<br><a id="more"></a><br>比如，a=”abcd”，b=”c”，那么这个数字就是 3。</p>
 <p>但是这样会出现一个问题，a 和 b 能够表达两个不同的数字：比如，a=“ababa”，b=”aba”时，那个数字可以是 1 也可以是 3。他们对这</p>
 <p>种现象很好奇现在给定一个字符串 a，求一个整数 x 使得对于任意一个长度大于 x 的串 b，这一问题都不会出现。</p>
 <p><strong>Input:</strong></p>
