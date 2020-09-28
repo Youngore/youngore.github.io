@@ -3763,7 +3763,7 @@ hash[x] = y, x这个**位置**在HASH里对应的第y次（在当前状态下）
   <entry>
     <title>计数</title>
     <url>/2020/09/28/%E8%AE%A1%E6%95%B0/</url>
-    <content><![CDATA[<p>题目大意：给你一个随机生成的 1~n 的排列，并定义区间[l,r]的价值为$C_{l,r} = max(a_i-a_j|l \leq i,j \leq j)$<br><a id="more"></a></p>
+    <content><![CDATA[<p>题目大意：给你一个随机生成的1~n的排列。<br><a id="more"></a><br>并定义区间[l,r]的价值为$C_{l,r} = max(a_i-a_j|l \leq i,j \leq j)$</p>
 <p>部分分很好拿，但是正解并不容易做，有很多种做法，单调栈，单调队列，ST表都可以做，几乎只要是可以维护最大值最小值的数据结构都可以做</p>
 <p>这里只介绍ST表的做法，一个$O(nlogn)$预处理，$O(1)$查询的数据结构</p>
 <p>先预处理ST表</p>
