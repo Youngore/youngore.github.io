@@ -21,21 +21,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="题目大意：异构体们需要使得他们彼此之间的能量值一样。">
+  <meta name="description" content="题目大意：n 个点，m 条边的有向图，每次选择若干点将其标记，不能存在两个不同的点 i,j 满足可以从 i 到达 j。问最少取几次可以使所有点都被标记过。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="裂变链接">
-<meta property="og:url" content="http://example.com/2020/10/14/%E8%A3%82%E5%8F%98%E9%93%BE%E6%8E%A5/index.html">
+<meta property="og:title" content="轰炸">
+<meta property="og:url" content="http://example.com/2020/10/18/%E8%BD%B0%E7%82%B8/index.html">
 <meta property="og:site_name" content="Welcome to my blog!">
-<meta property="og:description" content="题目大意：异构体们需要使得他们彼此之间的能量值一样。">
+<meta property="og:description" content="题目大意：n 个点，m 条边的有向图，每次选择若干点将其标记，不能存在两个不同的点 i,j 满足可以从 i 到达 j。问最少取几次可以使所有点都被标记过。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-14T03:51:08.000Z">
-<meta property="article:modified_time" content="2020-10-14T03:55:07.790Z">
+<meta property="article:published_time" content="2020-10-18T11:24:39.000Z">
+<meta property="article:modified_time" content="2020-10-18T11:27:57.994Z">
 <meta property="article:author" content="Youngore">
-<meta property="article:tag" content="思维题">
+<meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2020/10/14/%E8%A3%82%E5%8F%98%E9%93%BE%E6%8E%A5/">
+<link rel="canonical" href="http://example.com/2020/10/18/%E8%BD%B0%E7%82%B8/">
 
 
 <script class="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>裂变链接 | Welcome to my blog!</title>
+  <title>轰炸 | Welcome to my blog!</title>
   
 
 
@@ -305,7 +305,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/14/%E8%A3%82%E5%8F%98%E9%93%BE%E6%8E%A5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/18/%E8%BD%B0%E7%82%B8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
@@ -321,7 +321,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          裂变链接
+          轰炸
         </h1>
 
         <div class="post-meta-container">
@@ -333,7 +333,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2020-10-14 11:51:08 / Modified: 11:55:07" itemprop="dateCreated datePublished" datetime="2020-10-14T11:51:08+08:00">2020-10-14</time>
+      <time title="Created: 2020-10-18 19:24:39 / Modified: 19:27:57" itemprop="dateCreated datePublished" datetime="2020-10-18T19:24:39+08:00">2020-10-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -362,12 +362,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>题目大意：异构体们需要使得他们彼此之间的能量值一样。<a id="more"></a>记第𝑖个异构体当前𝑒𝑖的能量，每个时刻，每个异构体都可以做如下三种操作中的一种：1、传递1的能量给自己左边相邻的异构体（如果存在）。2、传递1的能量给自己右边相邻的异构体（如果存在）。3、传递1的能量给自己（摸鱼）。为了尽快的回到前线作战，异构体们希望在最短的时间内使得所有异构体的能量值一样，问最短时间。数据保证有解。操作过程中自己的能量可以变为负数</p>
-<p>有点像均分纸牌，但是均分纸牌是每次只能移动一堆儿，这里是<strong>每个时刻，每个异构体</strong>，所以题意上就不一样</p>
-<p>想到他们均分完成之后，一定能够全部都是ave，所以我们考虑直接判断这个数字变成ave需要多少，然后把自己的需要/多余往后一个人的哪里堆积</p>
-<p>但是要特判断一种情况，就是当一个人比两边都要高的时候，这时候是加和，而不是取max了</p>
+        <p>题目大意：n 个点，m 条边的有向图，每次选择若干点将其标记，不能存在两个不同的点 i,j 满足可以从 i 到达 j。问最少取几次可以使所有点都被标记过。<a id="more"></a></p>
+<p>缩完点之后跑DAG的最长路</p>
+<p>傻逼的错误示范：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	val[x] = siz[x];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = heads[x]; i; i = nexs[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> y = vers[i];</span><br><span class="line">		<span class="keyword">if</span> (val[y]) <span class="keyword">return</span>;</span><br><span class="line">		dfs(y);</span><br><span class="line">		val[x] += val[y];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>归根结底还是思路没有捋清楚，或者说，经过将近一个半小时的思考，思路混乱了，在最接近正解的时候挂掉了</p>
 <p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, res, ave;</span><br><span class="line"><span class="keyword">int</span> a[N], b[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	n = read();</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) a[i] = read(), ave += a[i], b[i] = a[i];</span><br><span class="line">	</span><br><span class="line">	ave /= n;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (b[i] &gt; b[i - <span class="number">1</span>] &amp;&amp; b[i] &gt; b[i + <span class="number">1</span>]) res = max(res, <span class="built_in">abs</span>(b[i] - ave));</span><br><span class="line">		res = max(res, <span class="built_in">abs</span>(ave - a[i]));</span><br><span class="line">		a[i + <span class="number">1</span>] -= (ave - a[i]);	</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; res;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ver[N &lt;&lt; <span class="number">1</span>], nex[N &lt;&lt; <span class="number">1</span>], head[N], cnt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add_edge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ver[++ cnt] = y;</span><br><span class="line">	nex[cnt] = head[x];</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">void</span>)(head[x] = cnt);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, res, ret;</span><br><span class="line"><span class="keyword">int</span> num, top, tot;</span><br><span class="line"><span class="keyword">int</span> dfn[N], low[N], in[N], sta[N], tar[N], siz[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dfn[x] = low[x] = ++ tot; in[x] = <span class="number">1</span>, sta[++ top] = x;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = head[x]; i; i = nex[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> y = ver[i];</span><br><span class="line">		<span class="keyword">if</span> (! dfn[y])</span><br><span class="line">		&#123;</span><br><span class="line">			tarjan(y);</span><br><span class="line">			low[x] = min(low[x], low[y]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (in[y]) low[x] = min(low[x], dfn[y]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (low[x] == dfn[x])</span><br><span class="line">	&#123;</span><br><span class="line">		++ num;</span><br><span class="line">		<span class="keyword">int</span> y;</span><br><span class="line">		<span class="keyword">do</span></span><br><span class="line">		&#123;</span><br><span class="line">			y = sta[top --]; in[y] = <span class="number">0</span>;</span><br><span class="line">			tar[y] = num;</span><br><span class="line">			++ siz[num];</span><br><span class="line">		&#125;<span class="keyword">while</span> (x != y);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q; <span class="keyword">int</span> rd[N], cd[N];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> vers[N], nexs[N], heads[N], cnts;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vers[++ cnts] = y;</span><br><span class="line">	nexs[cnts] = heads[x];</span><br><span class="line">	++ rd[y], ++ cd[x];</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">void</span>)(heads[x] = cnts);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> val[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (val[x]) <span class="keyword">return</span> val[x];</span><br><span class="line">	<span class="keyword">int</span> now = siz[x];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = heads[x]; i; i = nexs[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> y = vers[i];</span><br><span class="line">		now = max(now, dfs(y) + siz[x]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> val[x] = now;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//	freopen(&quot;t2.in&quot;, &quot;r&quot;, stdin), freopen(&quot;t2.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">	n = read(), m = read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x = read(), y = read();</span><br><span class="line">		add_edge(x, y);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i) <span class="keyword">if</span> (! dfn[i]) tarjan(i);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">1</span>; x &lt;= n; ++ x)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = head[x]; i; i = nex[i])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> y = ver[i];</span><br><span class="line">			<span class="keyword">if</span> (tar[x] == tar[y]) <span class="keyword">continue</span>;</span><br><span class="line"><span class="comment">//cout &lt;&lt; &quot;x-&gt;&quot; &lt;&lt; x &lt;&lt; &quot; y-&gt;&quot; &lt;&lt; y &lt;&lt; &#x27;\n&#x27;;</span></span><br><span class="line"><span class="comment">//cout &lt;&lt; &quot;tar[x]-&gt;&quot; &lt;&lt; tar[x] &lt;&lt; &quot; tar[y]-&gt;&quot; &lt;&lt; tar[y] &lt;&lt; &#x27;\n&#x27;;</span></span><br><span class="line">			add(tar[x], tar[y]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//cout &lt;&lt; &quot;num----&gt;&quot; &lt;&lt; num &lt;&lt; &#x27;\n&#x27;;</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= num; ++ i) res = max(res, dfs(i));</span><br><span class="line">	put(res);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结：</p>
+<p>真的好难受，本以为A掉的题结果挂了，就差那么一点啊，真的就一点啊</p>
+<p>期望得分：100+100+30pts</p>
+<p>实际得分：0+20+30pts</p>
+<p>第一题纯属傻逼，看不出来是壮压</p>
+<p>第二题真可惜</p>
+<p>第三题，放弃了，打暴力就走了</p>
+<p>虎瘦雄心在，人穷志不短，无论落魄到何种地步，都要坚守做人的底线，心怀勇气的走下去，只有这样才会慢慢好起来</p>
+<p>我相信我自己没有问题，我一定会起来的！</p>
 
     </div>
 
@@ -377,21 +387,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%80%9D%E7%BB%B4%E9%A2%98/" rel="tag"># 思维题</a>
+              <a href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag"># 图论</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/10/14/%E6%AD%BB%E4%BA%A1%E9%B8%BD%E8%80%85/" rel="prev" title="死亡鸽者">
-                  <i class="fa fa-chevron-left"></i> 死亡鸽者
+                <a href="/2020/10/18/P3928-%E4%B8%80%E9%81%93%E7%AE%80%E5%8D%95%E9%A2%98/" rel="prev" title="P3928 一道简单题">
+                  <i class="fa fa-chevron-left"></i> P3928 一道简单题
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/10/14/%E6%9C%80%E5%B0%8F%E5%B7%AE%E5%BC%82%E7%9F%A9%E9%98%B5/" rel="next" title="最小差异矩阵">
-                  最小差异矩阵 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
