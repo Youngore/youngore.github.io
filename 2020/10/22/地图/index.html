@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="题面大意：Makik 有一张详细的城市地图，地图标注了 L 个景区，编号为 1~L。而景区与景区之间建有单向高速通道。这天，Makik 要去逛景区，他可以任选一个景区开始一天行程，且只能通过单向高速通道进入其他景区。至少要参观两个景区，游玩最后要回到起始景区。如果 Makik 参观了第 i 个景区，会获得一个乐趣值 F_i。且参观过得景区不会再获得乐趣值。对于第 i 条单向高速通道，需要消耗 T_">
+  <meta name="description" content="题面大意：Makik 有一张详细的城市地图，地图标注了 L 个景区，编号为 1~L。而景区与景区之间建有单向高速通道。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="地图">
 <meta property="og:url" content="http://example.com/2020/10/22/%E5%9C%B0%E5%9B%BE/index.html">
 <meta property="og:site_name" content="Welcome to my blog!">
-<meta property="og:description" content="题面大意：Makik 有一张详细的城市地图，地图标注了 L 个景区，编号为 1~L。而景区与景区之间建有单向高速通道。这天，Makik 要去逛景区，他可以任选一个景区开始一天行程，且只能通过单向高速通道进入其他景区。至少要参观两个景区，游玩最后要回到起始景区。如果 Makik 参观了第 i 个景区，会获得一个乐趣值 F_i。且参观过得景区不会再获得乐趣值。对于第 i 条单向高速通道，需要消耗 T_">
+<meta property="og:description" content="题面大意：Makik 有一张详细的城市地图，地图标注了 L 个景区，编号为 1~L。而景区与景区之间建有单向高速通道。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-22T04:09:39.000Z">
-<meta property="article:modified_time" content="2020-10-22T04:20:11.524Z">
+<meta property="article:modified_time" content="2020-10-22T06:01:38.541Z">
 <meta property="article:author" content="Youngore">
 <meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
@@ -333,7 +333,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2020-10-22 12:09:39 / Modified: 12:20:11" itemprop="dateCreated datePublished" datetime="2020-10-22T12:09:39+08:00">2020-10-22</time>
+      <time title="Created: 2020-10-22 12:09:39 / Modified: 14:01:38" itemprop="dateCreated datePublished" datetime="2020-10-22T12:09:39+08:00">2020-10-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -362,7 +362,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>题面大意：Makik 有一张详细的城市地图，地图标注了 L 个景区，编号为 1~L。而景区与景区之间建有单向高速通道。<!--more=-->这天，Makik 要去逛景区，他可以任选一个景区开始一天行程，且只能通过单向高速通道进入其他景区。至少要参观两个景区，游玩最后要回到起始景区。<br>如果 Makik 参观了第 i 个景区，会获得一个乐趣值 F_i。且参观过得景区不会再获得乐趣值。对于第 i 条单向高速通道，需要消耗 T_i 的时间，能够从 L1_i 到达 L2_i。为了简化问题，参观景区不需要花费时间，Makik 想要最终单位时间内获得的乐趣值最大。<br>请你写个程序，帮 Makik 计算一下他能得到的最大平均乐趣值。</p>
+        <p>题面大意：Makik 有一张详细的城市地图，地图标注了 L 个景区，编号为 1~L。而景区与景区之间建有单向高速通道。<a id="more"></a>这天，Makik 要去逛景区，他可以任选一个景区开始一天行程，且只能通过单向高速通道进入其他景区。至少要参观两个景区，游玩最后要回到起始景区。<br>如果 Makik 参观了第 i 个景区，会获得一个乐趣值 F_i。且参观过得景区不会再获得乐趣值。对于第 i 条单向高速通道，需要消耗 T_i 的时间，能够从 L1_i 到达 L2_i。为了简化问题，参观景区不需要花费时间，Makik 想要最终单位时间内获得的乐趣值最大。<br>请你写个程序，帮 Makik 计算一下他能得到的最大平均乐趣值。</p>
 <p>显然我们最终的答案是一个简单环</p>
 <p>然后推一下式子：</p>
 <p>我们要最大化<script type="math/tex">\dfrac {\sum v_i} {\sum e_i}​</script></p>
