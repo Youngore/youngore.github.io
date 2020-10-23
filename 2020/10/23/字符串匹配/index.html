@@ -21,21 +21,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="题目大意：给定一个长度为 𝑛 的序列，你会在 [1,𝑛] 范围内随机两个正整数 𝑙, 𝑟 ，然后若有 𝑙 &gt; 𝑟 ，则交换 𝑙, 𝑟 。你想要知道区间 [𝑙, 𝑟] 内不同元素个数的期望。">
+  <meta name="description" content="题目大意：对于一个字符集大小为$C$的字符串$P$，我们可以将任意两种字符在$P$中的位置进行交换，例如$P$&#x3D;$abcba$，我们交换$a,b$就变为了$bacab$，交换$a,d$就变为了$dbcbd$，交换可以进行任意多次。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="随机">
-<meta property="og:url" content="http://example.com/2020/10/07/%E9%9A%8F%E6%9C%BA/index.html">
+<meta property="og:title" content="字符串匹配">
+<meta property="og:url" content="http://example.com/2020/10/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/index.html">
 <meta property="og:site_name" content="Welcome to my blog!">
-<meta property="og:description" content="题目大意：给定一个长度为 𝑛 的序列，你会在 [1,𝑛] 范围内随机两个正整数 𝑙, 𝑟 ，然后若有 𝑙 &gt; 𝑟 ，则交换 𝑙, 𝑟 。你想要知道区间 [𝑙, 𝑟] 内不同元素个数的期望。">
+<meta property="og:description" content="题目大意：对于一个字符集大小为$C$的字符串$P$，我们可以将任意两种字符在$P$中的位置进行交换，例如$P$&#x3D;$abcba$，我们交换$a,b$就变为了$bacab$，交换$a,d$就变为了$dbcbd$，交换可以进行任意多次。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-07T12:22:08.000Z">
-<meta property="article:modified_time" content="2020-10-07T12:38:27.654Z">
+<meta property="article:published_time" content="2020-10-23T00:58:23.000Z">
+<meta property="article:modified_time" content="2020-10-23T01:03:29.666Z">
 <meta property="article:author" content="Youngore">
-<meta property="article:tag" content="思维题">
+<meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2020/10/07/%E9%9A%8F%E6%9C%BA/">
+<link rel="canonical" href="http://example.com/2020/10/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">
 
 
 <script class="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>随机 | Welcome to my blog!</title>
+  <title>字符串匹配 | Welcome to my blog!</title>
   
 
 
@@ -305,7 +305,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/07/%E9%9A%8F%E6%9C%BA/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
@@ -321,7 +321,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          随机
+          字符串匹配
         </h1>
 
         <div class="post-meta-container">
@@ -333,7 +333,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2020-10-07 20:22:08 / Modified: 20:38:27" itemprop="dateCreated datePublished" datetime="2020-10-07T20:22:08+08:00">2020-10-07</time>
+      <time title="Created: 2020-10-23 08:58:23 / Modified: 09:03:29" itemprop="dateCreated datePublished" datetime="2020-10-23T08:58:23+08:00">2020-10-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -362,19 +362,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>题目大意：给定一个长度为 𝑛 的序列，你会在 [1,𝑛] 范围内随机两个正整数 𝑙, 𝑟 ，然后若有 𝑙 &gt; 𝑟 ，则交换 𝑙, 𝑟 。你想要知道区间 [𝑙, 𝑟] 内不同元素个数的期望。</p>
-<a id="more"></a>
-<p>暴力很好想 也很好写</p>
-<p>但是$n^2$终究过不去，正解就是对暴力的优化</p>
-<p>考虑枚举每一个i作为重点的贡献</p>
-<p>或者说，以i为分界点，i之前的为L，i之后的一段为R，这都是i产生的贡献</p>
-<p>至于为什么$nex[i]-i$但是不用加1？</p>
-<p><strong>因为nex[i]数组表示的是i这个位置之后第一个再次出现i的位置</strong></p>
-<p>如果加1的话，就会多算一个数字</p>
-<p>又因为区间可以反过来再算一遍，所以要乘以2</p>
-<p>减n是因为单个区间会被算重</p>
+        <p>题目大意：对于一个字符集大小为$C$的字符串$P$，我们可以将任意两种字符在$P$中的位置进行交换，例如$P$=$abcba$，我们交换$a,b$就变为了$bacab$，交换$a,d$就变为了$dbcbd$，交换可以进行任意多次。<a id="more"></a>若交换后$P$变为了字符串$Q$，则我们称字符串$Q$和$P$为匹配的现在给定两个字符集的大小为$C$的字符串$S,T$，请你求出$S$中有多少个连续子串与$T$匹配 </p>
+<p>考虑KMP的本质，是对完全相同的字符串进行匹配，而我们这里呢是对相对位置的匹配</p>
+<p>将要求改为两个字符上一次出现的相对位置相同 (即位置差值) 即可</p>
+<p>考察知识点：KMP的转化</p>
+<p>不难，考场上应该想出来，但是心态爆炸了，没想到</p>
 <p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    int s(0), w(1);</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch &lt; <span class="string">&#x27;0&#x27;</span> || ch &gt; <span class="string">&#x27;9&#x27;</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">&#x27;-&#x27;</span>) w = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; ch &lt;= <span class="string">&#x27;9&#x27;</span>) s = s * <span class="number">10</span> + ch - <span class="string">&#x27;0&#x27;</span>, ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> s * w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> pos[N], nex[N], a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, ret (<span class="number">0</span>);</span><br><span class="line">    n = read();</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) a[i] = read();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= N; ++ i) pos[i] = n + <span class="number">1</span>, nex[i] = n + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = n; i &gt;= <span class="number">1</span>; -- i)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="keyword">if</span> (pos[a[i]] == n + <span class="number">1</span>) pos[a[i]] = i;</span><br><span class="line">		<span class="keyword">else</span> nex[i] = pos[a[i]], pos[a[i]] = i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) ret += i * (nex[i] - i);</span><br><span class="line"></span><br><span class="line">    ret = ret * <span class="number">2</span>; ret -= n;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">&quot;%.3lf&quot;</span>, <span class="number">1.0</span> / (n * n) * ret);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, t;</span><br><span class="line"><span class="keyword">int</span> a[N], b[N];</span><br><span class="line"><span class="keyword">int</span> nex[N], xa[N], xb[N], f[N], q[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">pres_dou</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n = read(), m = read();</span><br><span class="line">	<span class="built_in">memset</span>(nex, <span class="number">0</span>, <span class="keyword">sizeof</span> nex);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i] = read();</span><br><span class="line">		xa[i] = i - nex[a[i]], nex[a[i]] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">memset</span>(nex, <span class="number">0</span>, <span class="keyword">sizeof</span> nex);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">	&#123;</span><br><span class="line">		b[i] = read();</span><br><span class="line">		xb[i] = i - nex[b[i]], nex[b[i]] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	t = xb[m + <span class="number">1</span>] = <span class="number">0</span>; <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= m; ++ i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (j &amp;&amp; min(j + <span class="number">1</span>, xb[i]) != xb[j + <span class="number">1</span>]) j = f[j];</span><br><span class="line">		<span class="keyword">if</span> (min(j + <span class="number">1</span>, xb[i]) == xb[j + <span class="number">1</span>]) ++ j;</span><br><span class="line">		f[i] = j;</span><br><span class="line">	&#125;</span><br><span class="line">	j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (j &amp;&amp; min(j + <span class="number">1</span>, xa[i]) != xb[j + <span class="number">1</span>]) j = f[j];</span><br><span class="line">		<span class="keyword">if</span> (min(j + <span class="number">1</span>, xa[i]) == xb[j + <span class="number">1</span>]) ++ j;</span><br><span class="line">		<span class="keyword">if</span> (j == m) q[++ t] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	put(t);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; ++ i) <span class="built_in">printf</span> (<span class="string">&quot;%d &quot;</span>, q[i] - m + <span class="number">1</span>); <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">int</span> T = read(), C = read();</span><br><span class="line">	<span class="keyword">while</span> (T --) pres_dou(), solve();</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -384,21 +378,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%80%9D%E7%BB%B4%E9%A2%98/" rel="tag"># 思维题</a>
+              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"># 字符串</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/10/07/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/" rel="prev" title="最小公倍数">
-                  <i class="fa fa-chevron-left"></i> 最小公倍数
+                <a href="/2020/10/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" rel="prev" title="冒泡排序">
+                  <i class="fa fa-chevron-left"></i> 冒泡排序
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/10/07/%E7%9F%A9%E9%98%B5/" rel="next" title="矩阵">
-                  矩阵 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
