@@ -29,7 +29,7 @@
 <meta property="og:description" content="题目大意：给定数字n，求$n\bmod i$和，其中i属于n，多组数据T1e6,n1e7！">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-31T00:33:39.000Z">
-<meta property="article:modified_time" content="2020-10-31T00:48:56.339Z">
+<meta property="article:modified_time" content="2020-10-31T06:23:07.262Z">
 <meta property="article:author" content="Youngore">
 <meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
@@ -333,7 +333,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2020-10-31 08:33:39 / Modified: 08:48:56" itemprop="dateCreated datePublished" datetime="2020-10-31T08:33:39+08:00">2020-10-31</time>
+      <time title="Created: 2020-10-31 08:33:39 / Modified: 14:23:07" itemprop="dateCreated datePublished" datetime="2020-10-31T08:33:39+08:00">2020-10-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -369,7 +369,7 @@
 <p>于是我们再次打表找规律，就看每个数字对于后面数的贡献是啥，栗子：</p>
 <p>1对谁也没有贡献，2对2贡献为0，对3贡献为1,3对3贡献为0，对4贡献为1，对5贡献为2，对6贡献为零…</p>
 <p>打个表就会发现，我们设$f_i$表示答案</p>
-<p>显然可以发现$f_i=f_i+(i-2)-(d_i-1-i)$（d表示i的约数和）</p>
+<p>显然可以发现$f_i=f_{i-1}+(i-2)-(d_i-1-i)$（d表示i的约数和）</p>
 <p>显然从上一个数字当当前，是每一位的贡献都会多（除了i和本身）所以加上i-2</p>
 <p>但是我们又可以打表发现这个数字的下面的约数位都是0，也就是我们一定多加了某些数字，所以要减去约数和，但是约数和包含了1和i</p>
 <p>所以还要加回来</p>
