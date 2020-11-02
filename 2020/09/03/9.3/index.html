@@ -29,7 +29,7 @@
 <meta property="og:description" content="第一道题 江南乐">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-03T13:30:30.000Z">
-<meta property="article:modified_time" content="2020-09-24T23:07:07.582Z">
+<meta property="article:modified_time" content="2020-11-02T10:51:41.460Z">
 <meta property="article:author" content="Youngore">
 <meta property="article:tag" content="summary">
 <meta name="twitter:card" content="summary">
@@ -339,7 +339,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-09-25 07:07:07" itemprop="dateModified" datetime="2020-09-25T07:07:07+08:00">2020-09-25</time>
+        <time title="Modified: 2020-11-02 18:51:41" itemprop="dateModified" datetime="2020-11-02T18:51:41+08:00">2020-11-02</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -376,7 +376,7 @@
 <p>因此如果他是奇数，我们才去异或</p>
 <p>并且应用到整除分块，$\dfrac m {\dfrac m i}$  为$\dfrac m i$值相同的$i$的最大值</p>
 <p><strong>！！！注意：优化find,是用此时的x标记后继状态, 找mex时寻找具有这个标记的x的后继状态.</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (sg[x] != <span class="number">-1</span>) <span class="keyword">return</span> sg[x];</span><br><span class="line"><span class="keyword">if</span> (x &lt; f) <span class="keyword">return</span> sg[x] = <span class="number">0</span>;</span><br><span class="line">sg[x] = <span class="number">0</span>; <span class="keyword">int</span> i, j, res;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= x; i = x / (x / i) + <span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (j = i; j &lt;= min(i + <span class="number">1</span>, x); ++ j)</span><br><span class="line">	&#123;</span><br><span class="line">		res = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> ((x % j) &amp; <span class="number">1</span>) res = res ^ yhm_find(x / j + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span> ((j - x % j) &amp; <span class="number">1</span>) res = res ^ yhm_find(x / j);</span><br><span class="line">		s[res] = x;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (s[sg[x]] == x) ++ sg[x];</span><br><span class="line"><span class="keyword">return</span> sg[x];</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (sg[x] != <span class="number">-1</span>) <span class="keyword">return</span> sg[x];</span><br><span class="line"><span class="keyword">if</span> (x &lt; f) <span class="keyword">return</span> sg[x] = <span class="number">0</span>;</span><br><span class="line">sg[x] = <span class="number">0</span>; <span class="keyword">int</span> i, j, res;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= x; i = x / (x / i) + <span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (j = i; j &lt;= min(i + <span class="number">1</span>, x); ++ j)</span><br><span class="line">    &#123;</span><br><span class="line">        res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> ((x % j) &amp; <span class="number">1</span>) res = res ^ yhm_find(x / j + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> ((j - x % j) &amp; <span class="number">1</span>) res = res ^ yhm_find(x / j);</span><br><span class="line">        s[res] = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (s[sg[x]] == x) ++ sg[x];</span><br><span class="line"><span class="keyword">return</span> sg[x];</span><br></pre></td></tr></table></figure>
 <p>第二道是ddp”动态 DP”&amp;动态树分治</p>
 <p>动态dp&amp;动态树分治</p>
 <p>考虑思路：</p>

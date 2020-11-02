@@ -29,7 +29,7 @@
 <meta property="og:description" content="题目大意：你什么方面都强，所以你可以分别重新锻造这两把剑，锻造就相当于重新排列这两个序列。合并这两把剑，让它变成一把新剑（对应序列c），合并相当于把对应位置上的数加起来c[i]&#x3D;a[i]+b[i]。最后你准备拿着这把新剑去找大Boss，造成的伤害是众数出现的次数。问怎么排列才能使得伤害最大化，输出最大伤害">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-01T01:22:08.000Z">
-<meta property="article:modified_time" content="2020-10-01T01:37:29.893Z">
+<meta property="article:modified_time" content="2020-11-02T10:49:03.146Z">
 <meta property="article:author" content="Youngore">
 <meta property="article:tag" content="动规">
 <meta name="twitter:card" content="summary">
@@ -331,10 +331,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2020-10-01 09:22:08 / Modified: 09:37:29" itemprop="dateCreated datePublished" datetime="2020-10-01T09:22:08+08:00">2020-10-01</time>
+      <time title="Created: 2020-10-01 09:22:08" itemprop="dateCreated datePublished" datetime="2020-10-01T09:22:08+08:00">2020-10-01</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-02 18:49:03" itemprop="dateModified" datetime="2020-11-02T18:49:03+08:00">2020-11-02</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -374,7 +380,7 @@
 <p>但是我们忙猜概率不会那么大，我们只去枚举到最大值加上一个随机数字（小于五百）</p>
 <p>然后就可以过了….</p>
 <p>代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= maxv + <span class="number">100</span>; ++ i)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= i - <span class="number">1</span>; ++ j)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// res += min(a[j], b[i - j]);</span></span><br><span class="line">		res += min(b[j], a[i - j]);</span><br><span class="line">	&#125;</span><br><span class="line">	yhm = max(yhm, res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= maxv + <span class="number">100</span>; ++ i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= i - <span class="number">1</span>; ++ j)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// res += min(a[j], b[i - j]);</span></span><br><span class="line">        res += min(b[j], a[i - j]);</span><br><span class="line">    &#125;</span><br><span class="line">    yhm = max(yhm, res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
