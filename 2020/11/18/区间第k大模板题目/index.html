@@ -29,7 +29,7 @@
 <meta property="og:description" content="题目大意:给定一个序列求这个序列的第k大数字">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-18T11:30:08.000Z">
-<meta property="article:modified_time" content="2020-11-18T11:45:49.452Z">
+<meta property="article:modified_time" content="2020-11-18T13:37:58.990Z">
 <meta property="article:author" content="Youngore">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags" rel="section"><i class="fa fa-tag fa-fw"></i>Tags<span class="badge">33</span></a>
+    <a href="/tags" rel="section"><i class="fa fa-tag fa-fw"></i>Tags<span class="badge">34</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -147,7 +147,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">179</span></a>
+    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">180</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -226,7 +226,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives">
         
-          <span class="site-state-item-count">179</span>
+          <span class="site-state-item-count">180</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -239,7 +239,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags">
           
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">34</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -333,7 +333,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2020-11-18 19:30:08 / Modified: 19:45:49" itemprop="dateCreated datePublished" datetime="2020-11-18T19:30:08+08:00">2020-11-18</time>
+      <time title="Created: 2020-11-18 19:30:08 / Modified: 21:37:58" itemprop="dateCreated datePublished" datetime="2020-11-18T19:30:08+08:00">2020-11-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -369,7 +369,7 @@
 <p>并且是$O(n)$的,也就不必快速排序来求了</p>
 <p>考虑快排的思想,每次分治的时候,都选择一个基准值,然后看有多少个数字大于这个基准值即为cnt,然后根据k与cnt的关系把区间一分为2递归到自己需要的区间</p>
 <p>期望分log次,$n + n/2＋n/4…+1=O(n)$</p>
-<p>代码如下:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">	nth_element(a + <span class="number">1</span>, a + k, a + <span class="number">1</span> + n); </span><br><span class="line">	put(a[k]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>代码如下:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    nth_element(a + <span class="number">1</span>, a + k, a + <span class="number">1</span> + n); </span><br><span class="line">    put(a[k]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <p>后记:</p>
 <p>在这里,我谨代表所有被快速排序坑过的人们,向快排发明者致以最崇高的问候和衷心的祝愿</p>
 
@@ -393,8 +393,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/9999/01/01/NOIp%E5%89%8D/" rel="next" title="NOIp前">
-                  NOIp前 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/11/18/%E6%B8%B8%E8%B5%B0/" rel="next" title="游走">
+                  游走 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
