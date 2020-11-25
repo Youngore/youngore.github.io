@@ -29,7 +29,7 @@
 <meta property="og:description" content="题目大意:有一个 n 个元素的数列 a，要进行 m 次查询，每次查询形式如下：">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-23T11:51:08.000Z">
-<meta property="article:modified_time" content="2020-11-23T11:57:11.715Z">
+<meta property="article:modified_time" content="2020-11-25T07:09:32.762Z">
 <meta property="article:author" content="Youngore">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
@@ -147,7 +147,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">189</span></a>
+    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">190</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -226,7 +226,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">190</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -331,10 +331,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2020-11-23 19:51:08 / Modified: 19:57:11" itemprop="dateCreated datePublished" datetime="2020-11-23T19:51:08+08:00">2020-11-23</time>
+      <time title="Created: 2020-11-23 19:51:08" itemprop="dateCreated datePublished" datetime="2020-11-23T19:51:08+08:00">2020-11-23</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-25 15:09:32" itemprop="dateModified" datetime="2020-11-25T15:09:32+08:00">2020-11-25</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -375,7 +381,13 @@
 <p>在l的位置插入r以及他的问题id</p>
 <p>然后一遍扫过去,统计答案,不断更新</p>
 <p>代码如下:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) (x &amp; -x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pr;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;pr&gt;q[N];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;vis, pre;</span><br><span class="line"><span class="keyword">int</span> n, m, now;</span><br><span class="line"><span class="keyword">int</span> a[N], b[N];</span><br><span class="line"><span class="keyword">int</span> nex[N], ans[N], tree[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">updata</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (x &lt;= n)</span><br><span class="line">    &#123;</span><br><span class="line">        tree[x] ^= val;</span><br><span class="line">        x += lowbit(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">res</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">while</span> (x)</span><br><span class="line">    &#123;</span><br><span class="line">        res ^= tree[x];</span><br><span class="line">        x -= lowbit(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j, l, r;</span><br><span class="line">    n = read();</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        a[i] = read();</span><br><span class="line">        ++ vis[a[i]];</span><br><span class="line">        nex[pre[a[i]]] = i;</span><br><span class="line">        pre[a[i]] = i;</span><br><span class="line">        <span class="keyword">if</span> (vis[a[i]] &gt; <span class="number">1</span>) now ^= a[i];</span><br><span class="line">        b[i] = now;</span><br><span class="line">    &#125;</span><br><span class="line">    m = read();</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        l = read(), r = read();</span><br><span class="line">        q[l].push_back(pr(r, i));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; (<span class="keyword">int</span>)q[i].size(); ++ j) ans[q[i][j].second] = query(q[i][j].first) ^ b[q[i][j].first];</span><br><span class="line">        l = nex[i];</span><br><span class="line">        <span class="keyword">if</span> (l) updata(l, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= m; ++ i) put(ans[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+<p>后记:</p>
+<p>考虑到代码的实现,第一次写博客的时候,并未深刻搞懂代码实现,于11.25更新.</p>
+<p>说明几个东西的定义:</p>
+<p>b数组表示不计算每一个a[i]第一次出现的情况的异或和</p>
+<p>tree数组表示的我们不断修改的一些东西.</p>
+<p>来自zlc大佬的讲解:</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">就是询问离线，按照左端点排序，然后每次移动当前的左端点，修改整体的状态，并同时查询答案；</span><br><span class="line"></span><br><span class="line">假如说现在枚举到了第i个点，那么第i个点在这个状态下就是 a[i]这个数出现的第一个位置，然后当我们把左端点移动到i+1时，a[i]的第一次出现的位置就会改变，假设变为nex[i].</span><br><span class="line"></span><br><span class="line">然后就每次移动 左端点的时候吧 nex[i]的贡献消掉</span><br><span class="line"></span><br><span class="line">直接消不好搞，因为原b数组是一个前缀异或，所以不在原来的数组上修改,多开一个树状数组开存修改的值</span><br><span class="line"></span><br><span class="line">树状数组可以快速查询前缀</span><br><span class="line"></span><br><span class="line">因为 ^ 这个运算可以消除（他的逆运算也是他自己） 所以可以按照代码那样的实现</span><br></pre></td></tr></table></figure>
     </div>
 
     
