@@ -21,21 +21,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="插头dp">
+  <meta name="description" content="题目大意:$n$个沙茶,被编号$1~n$排完队之后.每个沙茶希望自己的相邻的两人只要无一个人的编号和自己的编号相差为$1$(+1或-1$就行.现在想知道,存在多少方案满足沙茶们如此不苛刻的条件.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="插头dp">
-<meta property="og:url" content="http://example.com/2020/07/01/%E6%8F%92%E5%A4%B4dp/index.html">
+<meta property="og:title" content="queue2">
+<meta property="og:url" content="http://example.com/2020/11/26/queue2/index.html">
 <meta property="og:site_name" content="Welcome to my blog!">
-<meta property="og:description" content="插头dp">
+<meta property="og:description" content="题目大意:$n$个沙茶,被编号$1~n$排完队之后.每个沙茶希望自己的相邻的两人只要无一个人的编号和自己的编号相差为$1$(+1或-1$就行.现在想知道,存在多少方案满足沙茶们如此不苛刻的条件.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-01T04:06:39.000Z">
-<meta property="article:modified_time" content="2020-11-14T13:55:07.195Z">
+<meta property="article:published_time" content="2020-11-26T13:55:08.000Z">
+<meta property="article:modified_time" content="2020-11-26T14:29:07.859Z">
 <meta property="article:author" content="Youngore">
-<meta property="article:tag" content="dp">
+<meta property="article:tag" content="动规">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2020/07/01/%E6%8F%92%E5%A4%B4dp/">
+<link rel="canonical" href="http://example.com/2020/11/26/queue2/">
 
 
 <script class="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>插头dp | Welcome to my blog!</title>
+  <title>queue2 | Welcome to my blog!</title>
   
 
 
@@ -199,7 +199,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -211,6 +211,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90-f-i-j-1"><span class="nav-number">1.</span> <span class="nav-text">分析$f_{i,j,1}$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90-f-i-j-0"><span class="nav-number">2.</span> <span class="nav-text">分析$f_{i,j,0}$</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -305,7 +306,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/07/01/%E6%8F%92%E5%A4%B4dp/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/26/queue2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://pic.downk.cc/item/5f4edced160a154a67c251c8.jpg">
@@ -321,7 +322,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          插头dp
+          queue2
         </h1>
 
         <div class="post-meta-container">
@@ -331,23 +332,17 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2020-07-01 12:06:39" itemprop="dateCreated datePublished" datetime="2020-07-01T12:06:39+08:00">2020-07-01</time>
+      <time title="Created: 2020-11-26 21:55:08 / Modified: 22:29:07" itemprop="dateCreated datePublished" datetime="2020-11-26T21:55:08+08:00">2020-11-26</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-11-14 21:55:07" itemprop="dateModified" datetime="2020-11-14T21:55:07+08:00">2020-11-14</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E5%90%8E%E6%84%9F/" itemprop="url" rel="index"><span itemprop="name">学后感</span></a>
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
         </span>
     </span>
 
@@ -368,50 +363,50 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>插头dp<br><a id="more"></a><br>俗称轮廓线dp，</p>
-<p>各种网格覆盖问题，范围允许状压解决，常用于计算方案数与联通块权值</p>
-<p>插头是tm啥？格子与格子之间的状态</p>
-<p>网上图很多，不挂了</p>
-<p>说一说对各种状态的理解</p>
-<p>已知$b1,b2$</p>
-<p>当前有障碍的话，显然不能走</p>
-<p>只讨论没有障碍，能走的情况</p>
+        <p>题目大意:$n$个沙茶,被编号$1~n$排完队之后.每个沙茶希望自己的相邻的两人只要无一个人的编号和自己的编号相差为$1$(+1或-1$就行.现在想知道,存在多少方案满足沙茶们如此不苛刻的条件.<a id="more"></a></p>
+<p>计数dp</p>
+<p>状态:$f_{i,j,0/1}$表示推到第i个数字,有j对数字是相差1的且i与i-1相邻/不相邻</p>
+<h3 id="分析-f-i-j-1"><a href="#分析-f-i-j-1" class="headerlink" title="分析$f_{i,j,1}$"></a>分析$f_{i,j,1}$</h3><p>考虑$i-1$与$i-2$的关系</p>
 <ul>
-<li>$b1 = 0,b2 =0$</li>
+<li>若$i-1$与$i-2$相邻</li>
 </ul>
-<p>增加两个插头，要回路，因此要一个右插头一个下插头</p>
+<blockquote>
+<p>  将$i$插入到两者中间,拆散了一对$(i-1,i-2)$但是多了一对$(i-1,i)$,方案来自于$f_{i-1,j,1}$</p>
+<p>  将$i$插入到$i-1$的另一侧,多了一对$(i-1,i)$,方案来自于$f_{i-1,j-1,1}$</p>
+</blockquote>
 <ul>
-<li>$b1=0,b2=1$</li>
+<li>若$i-1$与$i-2$不相邻</li>
 </ul>
-<p>考虑向右拐，和向下直走</p>
+<blockquote>
+<p>  为了满足$(i-1,i)$相邻的条件,我们可以必须在$i-1$的两边插入,所以方案数目要加倍,方案来自于$f_{i-1,j-1,0} \times2$</p>
+</blockquote>
+<h3 id="分析-f-i-j-0"><a href="#分析-f-i-j-0" class="headerlink" title="分析$f_{i,j,0}$"></a>分析$f_{i,j,0}$</h3><p>依旧是考虑$i-1$与$i-2$的关系</p>
 <ul>
-<li>$b1=1, b2=0$</li>
+<li>若$i-1$与$i-2$相邻</li>
 </ul>
-<p>考虑向下拐，和向右直走</p>
+<blockquote>
+<p>  我们将$i$插入到任何一对里面都会破坏一对,因此方案来自于$f_{i-1,j+1,1}$,又因为有$j+1-1$个位置可以选(别忘记我们不能拆开$(i-1,i-2)$那对,)因此方案总数为$f_{i-1,j+1,1} \times j$</p>
+</blockquote>
 <ul>
-<li>$b1 = 1,b2=1$</li>
+<li>若$i-1$与$i-2$不相邻</li>
 </ul>
-<p>在右边找个匹配的右插头，然后把原来的两个1都干掉，在现在找到的位置把2干掉，把1重新弄上去</p>
+<blockquote>
+<p>  类比上一个情况,我们可以初步得到方程$f_{i-1,j+1,0}$,又因为有$j+1$个位置可以选,所以总方案数为$f_{i-1,j,0} \times (j+1)$</p>
+</blockquote>
+<p>也有可能是$i$不去拆开那些相邻的关系</p>
+<p>可以插入到平凡的世界:</p>
 <ul>
-<li>$b1=2,b2=2$</li>
+<li>$f_{i-1,j,1}$:这种情况会出现$(i-j-2+1)$个,因为当前共有$(i-j-2)$个位置可以插入,但是考虑到插入与$(i-1,i-2)$中间后,不会产生心的贡献,于是$+1$,股总方案数:$f_{i-1,j,1} \times(i-j-1)$</li>
+<li>$f_{i-1,j,0}$:类比上一个,只不过稍微简单一些:故总方案数:$f_{i-1,j,0} \times (i-j-2)$</li>
 </ul>
-<p>在左边找个…</p>
-<ul>
-<li>$b1=2,b2=1$</li>
-</ul>
-<p>考虑连上，该干啥干啥</p>
-<ul>
-<li>$b1= 1,b2=2$ </li>
-</ul>
-<p>如果不是终点不要记录答案</p>
-<details>
-<summary>各种含义</summary>
-<pre><code>dp[][x] = y, 第x次所表示的价值为y
-vis[][x] = y, 第x次所表示的状态为y
-cnt[x] = y, cntx这一维度表示的状态数目
-hash[x] = y, x这个**位置**在HASH里对应的第y次（在当前状态下）
-</code></pre>
-</details>
+<hr>
+<p>综上所述</p>
+<script type="math/tex; mode=display">f_{i,j,1}=f_{i-1,j,1}+f_{i-1,j-1,1}+f_{i-1,j-1,0}\times 2</script><script type="math/tex; mode=display">f_{i,j,0}=f_{i-1,j+1,1} \times j+f_{i-1,j+1,0} \times (j+1)</script><script type="math/tex; mode=display">f_{i,j,0}=f_{i-1,j,1} \times (i-j-1)+f_{i-1,j,0} \times (i-j-2)</script><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e3</span> + <span class="number">66</span>, mod = <span class="number">7777777</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> f[N][N][<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, i, j;</span><br><span class="line">    n = read();</span><br><span class="line">    f[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= n; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; i; ++ j)</span><br><span class="line">        &#123;</span><br><span class="line">            f[i][j][<span class="number">1</span>] = (f[i - <span class="number">1</span>][j][<span class="number">1</span>] + f[i - <span class="number">1</span>][j - <span class="number">1</span>][<span class="number">1</span>] + f[i - <span class="number">1</span>][j - <span class="number">1</span>][<span class="number">0</span>] * <span class="number">2</span>) % mod;</span><br><span class="line">            f[i][j][<span class="number">0</span>] = (f[i - <span class="number">1</span>][j + <span class="number">1</span>][<span class="number">1</span>] * j + f[i - <span class="number">1</span>][j + <span class="number">1</span>][<span class="number">0</span>] * (j + <span class="number">1</span>)) % mod;</span><br><span class="line">            f[i][j][<span class="number">0</span>] = (f[i][j][<span class="number">0</span>] + f[i - <span class="number">1</span>][j][<span class="number">1</span>] * (i - <span class="number">1</span> - j) + (f[i - <span class="number">1</span>][j][<span class="number">0</span>] * (i - <span class="number">2</span> - j))) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    put(f[n][<span class="number">0</span>][<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>后记:</p>
+<p>第一道学会学透学懂的计数dp,难了我整整两天</p>
+<p>神仙状态.</p>
+<p>感觉这一道题就加深了我对dp的理解</p>
+<p>我们又谁推过来,一定是由推过来那个状态所演变的,假如我现在只有$j$个,但是推过来那个有$(j+1)$个,意味着我这次的转移的意义是少一个$j$</p>
 
     </div>
 
@@ -421,20 +416,20 @@ hash[x] = y, x这个**位置**在HASH里对应的第y次（在当前状态下）
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/dp/" rel="tag"># dp</a>
+              <a href="/tags/%E5%8A%A8%E8%A7%84/" rel="tag"># 动规</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/07/01/%E6%90%9C%E7%B4%A2%E5%B0%8F%E7%BB%83#10/" rel="prev" title="搜索小练#10">
-                  <i class="fa fa-chevron-left"></i> 搜索小练#10
+                <a href="/2020/11/26/%E7%9F%A9%E9%98%B5(%E5%B7%AE%E5%88%86)/" rel="prev" title="矩阵(差分)">
+                  <i class="fa fa-chevron-left"></i> 矩阵(差分)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/07/02/%E5%8D%9A%E5%BC%88%E8%AE%BA/" rel="next" title="博弈论">
-                  博弈论 <i class="fa fa-chevron-right"></i>
+                <a href="/9999/01/01/NOIp%E5%89%8D/" rel="next" title="NOIp前">
+                  NOIp前 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
