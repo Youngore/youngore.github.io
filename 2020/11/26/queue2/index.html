@@ -29,7 +29,7 @@
 <meta property="og:description" content="题目大意:$n$个沙茶,被编号1至n排完队之后.每个沙茶希望自己的相邻的两人只要无一个人的编号和自己的编号相差为$1$(+1或-1就行).现在想知道,存在多少方案满足沙茶们如此不苛刻的条件.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-26T13:55:08.000Z">
-<meta property="article:modified_time" content="2020-11-26T14:51:43.451Z">
+<meta property="article:modified_time" content="2020-11-26T22:13:49.759Z">
 <meta property="article:author" content="Youngore">
 <meta property="article:tag" content="动规">
 <meta name="twitter:card" content="summary">
@@ -332,10 +332,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2020-11-26 21:55:08 / Modified: 22:51:43" itemprop="dateCreated datePublished" datetime="2020-11-26T21:55:08+08:00">2020-11-26</time>
+      <time title="Created: 2020-11-26 21:55:08" itemprop="dateCreated datePublished" datetime="2020-11-26T21:55:08+08:00">2020-11-26</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-27 06:13:49" itemprop="dateModified" datetime="2020-11-27T06:13:49+08:00">2020-11-27</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -371,21 +377,21 @@
 <li>若$i-1$与$i-2$相邻</li>
 </ul>
 <blockquote>
-<p>  将$i$插入到两者中间,拆散了一对$(i-1,i-2)$但是多了一对$(i-1,i)$,方案来自于$f_{i-1,j,1}$</p>
-<p>  将$i$插入到$i-1$的另一侧,多了一对$(i-1,i)$,方案来自于$f_{i-1,j-1,1}$</p>
+<p>  将$i$插入到两者中间,拆散了一对$(i-1,i-2)$但是多了一对$(i-1,i)$,依然还是$j$对,故方案来自于$f_{i-1,j,1}$</p>
+<p>  将$i$插入到$i-1$的另一侧,多了一对$(i-1,i)$.现在有$j$对,故当时状态只有$j-1$对,因此方案来自于$f_{i-1,j-1,1}$</p>
 </blockquote>
 <ul>
 <li>若$i-1$与$i-2$不相邻</li>
 </ul>
 <blockquote>
-<p>  为了满足$(i-1,i)$相邻的条件,我们可以必须在$i-1$的两边插入,所以方案数目要加倍,方案来自于$f_{i-1,j-1,0} \times2$</p>
+<p>  为了满足$(i-1,i)$相邻的条件,我们可以必须在$i-1$的旁边插入,又因为两边都可以满足要求,所以方案数目要加倍.故方案为$f_{i-1,j-1,0} \times2$</p>
 </blockquote>
 <h3 id="分析-f-i-j-0"><a href="#分析-f-i-j-0" class="headerlink" title="分析$f_{i,j,0}$"></a>分析$f_{i,j,0}$</h3><p>依旧是考虑$i-1$与$i-2$的关系</p>
 <ul>
 <li>若$i-1$与$i-2$相邻</li>
 </ul>
 <blockquote>
-<p>  我们将$i$插入到任何一对里面都会破坏一对,因此方案来自于$f_{i-1,j+1,1}$,又因为有$j+1-1$个位置可以选(别忘记我们不能拆开$(i-1,i-2)$那对,)因此方案总数为$f_{i-1,j+1,1} \times j$</p>
+<p>  我们将$i$插入到任何一对里面都会破坏一对,因为当前是$j$对,所以当时的状态就必须是$j+1$对,因此方案来自于$f_{i-1,j+1,1}$,又因为有$j+1-1$个位置可以选(别忘记我们不能拆开$(i-1,i-2)$那对,)因此方案总数为$f_{i-1,j+1,1} \times j$</p>
 </blockquote>
 <ul>
 <li>若$i-1$与$i-2$不相邻</li>
@@ -396,7 +402,7 @@
 <p>也有可能是$i$不去拆开那些相邻的关系</p>
 <p>可以插入到平凡的世界:</p>
 <ul>
-<li>$f_{i-1,j,1}$:这种情况会出现$(i-j-2+1)$个,因为当前共有$(i-j-2)$个位置可以插入,但是考虑到插入与$(i-1,i-2)$中间后,不会产生心的贡献,于是$+1$,股总方案数:$f_{i-1,j,1} \times(i-j-1)$</li>
+<li>$f_{i-1,j,1}$:这种情况会出现$(i-j-2+1)$个,因为当前共有$(i-j-2)$个位置可以插入,但是考虑到插入于$(i-1,i-2)$中间后,不会产生新的贡献,故$+1$,因此总方案数:$f_{i-1,j,1} \times(i-j-1)$</li>
 <li>$f_{i-1,j,0}$:类比上一个,只不过稍微简单一些:故总方案数:$f_{i-1,j,0} \times (i-j-2)$</li>
 </ul>
 <hr>
