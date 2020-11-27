@@ -5635,7 +5635,7 @@ while (k --> 0)
   <entry>
     <title>Miners 矿工配餐</title>
     <url>/2020/11/27/%E7%9F%BF%E5%B7%A5%E9%85%8D%E9%A4%90/</url>
-    <content><![CDATA[<p>题目大意:<a href="https://www.luogu.com.cn/problem/P4401">矿工配餐</a></p>
+    <content><![CDATA[<p>题目大意:<a href="https://www.luogu.com.cn/problem/P4401">矿工配餐</a><a id="more"></a></p>
 <p>状态显然,$f[p][i][j][k][z]$当前送第i辆车,第一个矿前两次送i和j，第二个前两次送k和z</p>
 <p>转移很容易啊,不动脑子也知道…</p>
 <p>就是个滚动数组</p>
@@ -5653,7 +5653,7 @@ while (k --> 0)
   <entry>
     <title>社交网络</title>
     <url>/2020/11/27/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<p>题目大意: <a href="https://www.luogu.com.cn/problem/P2047">社交网络</a></p>
+    <content><![CDATA[<p>题目大意: <a href="https://www.luogu.com.cn/problem/P2047">社交网络</a><a id="more"></a></p>
 <p>看到数据范围果断想到弗洛伊德</p>
 <p>但是有如下坑点:</p>
 <ul>
@@ -6813,6 +6813,16 @@ while (l < r) &#123;
 <p>这或许就是为什么有人不愿意写暴力:有的暴力很难写,分也不高,仅仅十几分,二十几分.</p>
 <p><strong>但是正是这每一题的二十几分</strong>我就与他们拉开了差距.</p>
 <p>终究是细节与心态决定成败!</p>
+<hr>
+<h3 id="2020-11-27"><a href="#2020-11-27" class="headerlink" title="2020.11.27"></a>2020.11.27</h3><p>今天考试身体极端不舒服</p>
+<p>结果不说了(rank7/12)</p>
+<p>难受,第一题不小心挂了70pts,思路对了,只是实现的时候脑子巨疼.(休息不足)</p>
+<p>得三十分都是毛爷爷保佑!</p>
+<p>考完之后改题的时候,仅仅改了两行就过去了…</p>
+<p>感觉逐渐回归自己的状态.以后务必保证休息,但是10.20~11.00那一段夜晚时间太安逸了,我太喜欢那种安静的感觉,做题效率高,就是不做题自己反思总结也很有禅性.</p>
+<p><strong>最近都是考的大家找的题,难免有水分,我要稳住接下来的名次起伏与心态.不管别人有没有水分,我都不可以有,这是对毛主席的敬畏!</strong></p>
+<p>我预感接下里这段时间我将会迎来最难受的一场经历!</p>
+<p>岁月不饶人,我亦未未饶过岁月.</p>
 <hr>
 ]]></content>
       <categories>
