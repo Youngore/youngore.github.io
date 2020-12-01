@@ -4525,7 +4525,11 @@ while (k --> 0)
         <category>题解</category>
       </categories>
       <tags>
+        <tag>搜索</tag>
         <tag>数学</tag>
+        <tag>容斥</tag>
+        <tag>剪枝</tag>
+        <tag>最小公倍数</tag>
       </tags>
   </entry>
   <entry>
