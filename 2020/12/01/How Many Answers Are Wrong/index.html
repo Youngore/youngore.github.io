@@ -28,13 +28,13 @@
 <meta property="og:site_name" content="Welcome to my blog!">
 <meta property="og:description" content="题目大意:给定一些区间的和,如果发现与前面矛盾就认为是假话.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdn.net/20160330155912738">
+<meta property="og:image" content="https://pic.downk.cc/item/5fc6bf316ea9a3b5483ab67a.png">
 <meta property="article:published_time" content="2020-12-01T13:49:30.000Z">
-<meta property="article:modified_time" content="2020-12-01T14:33:20.607Z">
+<meta property="article:modified_time" content="2020-12-01T22:11:17.156Z">
 <meta property="article:author" content="Youngore">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20160330155912738">
+<meta name="twitter:image" content="https://pic.downk.cc/item/5fc6bf316ea9a3b5483ab67a.png">
 
 
 <link rel="canonical" href="http://example.com/2020/12/01/How%20Many%20Answers%20Are%20Wrong/">
@@ -334,10 +334,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2020-12-01 21:49:30 / Modified: 22:33:20" itemprop="dateCreated datePublished" datetime="2020-12-01T21:49:30+08:00">2020-12-01</time>
+      <time title="Created: 2020-12-01 21:49:30" itemprop="dateCreated datePublished" datetime="2020-12-01T21:49:30+08:00">2020-12-01</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-12-02 06:11:17" itemprop="dateModified" datetime="2020-12-02T06:11:17+08:00">2020-12-02</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -381,7 +387,7 @@
 <p>如果当前两个点的基准值不一样,说明本条信息一定是正确的,因为无法根据其现有数据推算正假,于是认其为真.之后合并当前信息,为下一次查询做准备.</p>
 <p>如果当前两个点的基准值一样,那么说明两个点之间的距离可以通过之前的计算出来,则比较,相等没事,不相等的话计数器加1</p>
 <p>更清晰的话,有如下图表示:</p>
-<p><img src="https://img-blog.csdn.net/20160330155912738" alt=""></p>
+<p><img src="https://pic.downk.cc/item/5fc6bf316ea9a3b5483ab67a.png" alt=""></p>
 <p>用sum[k]表示k到k的基准点之间距离.</p>
 <p>如果想合并a,b,最终目的是求a,b到共同基准值的距离.</p>
 <p>首先求出a,b的祖先,然后比较x,y默认x认y为爹(a的祖先认b的祖先为爹)</p>
