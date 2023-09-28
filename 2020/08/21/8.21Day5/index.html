@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="小鱼 题目描述 大鱼生活在一座海底的宫殿，宫殿里的交易货币只有\(2\)元，\(5\)元，\(10\)元，\(20\)元，50元，\(100\)元六种纸币。现在大鱼想买一根恰好\(n\)元的拐杖，不能找零，那么大鱼至少要带多少张纸币去呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8.21DAY5">
+<meta property="og:url" content="http://example.com/2020/08/21/8.21Day5/index.html">
+<meta property="og:site_name" content="Welcome to my blog!">
+<meta property="og:description" content="小鱼 题目描述 大鱼生活在一座海底的宫殿，宫殿里的交易货币只有\(2\)元，\(5\)元，\(10\)元，\(20\)元，50元，\(100\)元六种纸币。现在大鱼想买一根恰好\(n\)元的拐杖，不能找零，那么大鱼至少要带多少张纸币去呢？">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-21T12:06:30.000Z">
+<meta property="article:modified_time" content="2022-09-19T02:09:24.026Z">
+<meta property="article:author" content="Youngore">
+<meta property="article:tag" content="集训">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2020/08/21/8.21Day5/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2020/08/21/8.21Day5/","path":"2020/08/21/8.21Day5/","title":"8.21DAY5"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>8.21DAY5 | Welcome to my blog!</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Welcome to my blog!</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="fa fa-tag fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E9%B1%BC"><span class="nav-number">1.</span> <span class="nav-text">小鱼</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#output"><span class="nav-number">1.1.</span> <span class="nav-text">output</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E9%BB%91"><span class="nav-number">2.</span> <span class="nav-text">小黑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E9%B1%BC-1"><span class="nav-number">3.</span> <span class="nav-text">小鱼</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Youngore"
+      src="https://pic.imgdb.cn/item/63212a2d16f2c2beb14b0110.jpg">
+  <p class="site-author-name" itemprop="name">Youngore</p>
+  <div class="site-description" itemprop="description">Give it time, it will happen</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">222</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags">
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Youngore" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Youngore" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/14334254/youngore" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;14334254&#x2F;youngore" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/21/8.21Day5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.imgdb.cn/item/63212a2d16f2c2beb14b0110.jpg">
+      <meta itemprop="name" content="Youngore">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+      <meta itemprop="description" content="Give it time, it will happen">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="8.21DAY5 | Welcome to my blog!">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          8.21DAY5
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-21 20:06:30" itemprop="dateCreated datePublished" datetime="2020-08-21T20:06:30+08:00">2020-08-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-09-19 10:09:24" itemprop="dateModified" datetime="2022-09-19T10:09:24+08:00">2022-09-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/qbxt%E4%B8%80%E6%AC%A1/" itemprop="url" rel="index"><span itemprop="name">qbxt一次</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="小鱼">小鱼</h3>
+<p>题目描述</p>
+<p>大鱼生活在一座海底的宫殿，宫殿里的交易货币只有<span
+class="math inline">\(2\)</span>元，<span
+class="math inline">\(5\)</span>元，<span
+class="math inline">\(10\)</span>元，<span
+class="math inline">\(20\)</span>元，50元，<span
+class="math inline">\(100\)</span>元六种纸币。现在大鱼想买一根恰好<span
+class="math inline">\(n\)</span>元的拐杖，不能找零，那么大鱼至少要带多少张纸币去呢？
+<span id="more"></span> 输入格式</p>
+<p>一行一个整数 <span class="math inline">\(n\)</span>。</p>
+<p>输出格式</p>
+<p>一行一个整数表示答案。</p>
+<p>样例数据</p>
+<p>input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9</span><br></pre></td></tr></table></figure>
+<h4 id="output">output</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>样例解释​</p>
+<p>带<span class="math inline">\(2\)</span>张<span
+class="math inline">\(2\)</span>元，一张<span
+class="math inline">\(5\)</span>元。</p>
+<p>数据规模与约定</p>
+<p>对于 <span class="math inline">\(30\%\)</span> 的数据，<span
+class="math inline">\(n \leq 100\)</span>。</p>
+<p>对于 <span class="math inline">\(60\%\)</span> 的数据，<span
+class="math inline">\(n \leq 10^9\)</span>。</p>
+<p>对于 <span class="math inline">\(100\%\)</span> 的数据，<span
+class="math inline">\(4 \leq n \leq 10^{18}\)</span>。</p>
+<p>时间限制：<span class="math inline">\(1 \text{s}\)</span></p>
+<p>空间限制：<span class="math inline">\(512 \text{MB}\)</span></p>
+<p>模拟就完事了</p>
+<p>那么多人都出锅了，他们好菜</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="comment">// #define debug</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//东方之珠 整夜未眠！</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">thestars</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n, liu, wu, si, san, er, yi, <span class="built_in">pd</span>(<span class="number">0</span>); </span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">if</span> (n &amp; <span class="number">1</span>) n -= <span class="number">5</span>, pd = <span class="number">1</span>;</span><br><span class="line">    liu = n / <span class="number">100</span>; n %= <span class="number">100</span>;</span><br><span class="line">    wu = n / <span class="number">50</span>, n %= <span class="number">50</span>;</span><br><span class="line">    si = n / <span class="number">20</span>, n %= <span class="number">20</span>;</span><br><span class="line">    san = n / <span class="number">10</span>, n %= <span class="number">10</span>;</span><br><span class="line">    er = n / <span class="number">5</span>; n = n - er * <span class="number">5</span>; <span class="keyword">if</span> (n%<span class="number">2</span> != <span class="number">0</span>) n += er * <span class="number">5</span>; er = <span class="number">0</span>;</span><br><span class="line">    yi = n / <span class="number">2</span>, n %= <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (pd) ++ er;</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> debug</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;100----&gt;&quot;</span> &lt;&lt; liu &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;50----&gt;&quot;</span> &lt;&lt; wu &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;20----&gt;&quot;</span> &lt;&lt; si &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;10----&gt;&quot;</span> &lt;&lt; san &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;5----&gt;&quot;</span> &lt;&lt; er &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;2----&gt;&quot;</span> &lt;&lt; yi &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    cout &lt;&lt; liu + wu + si + san + er + yi &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="built_in">fclose</span> (stdin), <span class="built_in">fclose</span> (stdout);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> youngore = <span class="built_in">thestars</span>();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;;&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">2147483647214748364</span></span><br><span class="line"><span class="comment">100----&gt;21474836472147483</span></span><br><span class="line"><span class="comment">50----&gt;1</span></span><br><span class="line"><span class="comment">20----&gt;0</span></span><br><span class="line"><span class="comment">10----&gt;1</span></span><br><span class="line"><span class="comment">5----&gt;0</span></span><br><span class="line"><span class="comment">2----&gt;2</span></span><br><span class="line"><span class="comment">1----&gt;0</span></span><br><span class="line"><span class="comment">21474836472147487</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="小黑">小黑</h3>
+<p>题目描述</p>
+<p>小黑初始有一个<span class="math inline">\(1\)</span>到<span
+class="math inline">\(n\)</span>的排列构成的序列，之后有<span
+class="math inline">\(m\)</span>次修改，每次可以在任意位置删掉一个元素或者插入一个之前被删掉了的元素（即保证序列中元素各不相同）。</p>
+<p>然后有<span
+class="math inline">\(Q\)</span>次查询，每次给出一个序列，问这个序列在这<span
+class="math inline">\(m\)</span>次修改的结果（不包括初始序列）中，是其中多少个的子串。</p>
+<p>输入格式</p>
+<p>第<span class="math inline">\(1\)</span>行<span
+class="math inline">\(3\)</span>个整数 <span
+class="math inline">\(n,m,Q\)</span>。</p>
+<p>接下来<span class="math inline">\(1\)</span>行<span
+class="math inline">\(n\)</span>个整数，表示初始的<span
+class="math inline">\(1\)</span>到<span
+class="math inline">\(n\)</span>排列。</p>
+<p>接下来<span class="math inline">\(m\)</span>行，每行形式为<span
+class="math inline">\(1,x\)</span>或<span
+class="math inline">\(2,x,y\)</span>，分别表示删除数<span
+class="math inline">\(x\)</span>和在数<span
+class="math inline">\(x\)</span>后面插入数<span
+class="math inline">\(y\)</span>，保证操作合法，插入操作中<span
+class="math inline">\(x=0\)</span>表示在序列开头插入，操作过程中序列可能为空。</p>
+<p>接下来<span class="math inline">\(Q\)</span>行，每行第<span
+class="math inline">\(1\)</span>个正整数<span
+class="math inline">\(k\)</span>，表示查询序列的长度，接下来<span
+class="math inline">\(k\)</span>个数，表示查询序列，保证序列的元素在<span
+class="math inline">\(1\)</span>到<span
+class="math inline">\(n\)</span>中且各不相同。<span
+class="math inline">\(k \geq 2\)</span>。</p>
+<p>输出格式</p>
+<p><span class="math inline">\(Q\)</span>行，每行一个整数表示答案。</p>
+<p>样例数据</p>
+<p>input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">4 4 2</span><br><span class="line">3 1 2 4</span><br><span class="line">1 1</span><br><span class="line">1 2</span><br><span class="line">2 0 1</span><br><span class="line">2 1 2</span><br><span class="line">2 3 4</span><br><span class="line">2 1 3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>样例解释</p>
+<p>序列的变化如下：</p>
+<p><span class="math inline">\(3,1,2,4 \rightarrow 3,2,4 \rightarrow 3,4
+\rightarrow 1,3,4 \rightarrow 1,2,3,4\)</span></p>
+<p><span class="math inline">\(3,4\)</span>是其中<span
+class="math inline">\(3\)</span>个的子串，<span
+class="math inline">\(1,3\)</span>是其中<span
+class="math inline">\(1\)</span>个的子串。</p>
+<p>数据规模与约定</p>
+<p>对于 <span class="math inline">\(30\%\)</span> 的数据，<span
+class="math inline">\(1 \leq n,m \leq 70\)</span>。</p>
+<p>对于<span class="math inline">\(60\%\)</span> 的数据，<span
+class="math inline">\(1 \leq n,m \leq 500\)</span>。</p>
+<p>对于 <span class="math inline">\(100\%\)</span> 的数据，<span
+class="math inline">\(1 \leq n,m \leq 100000\)</span>，<span
+class="math inline">\(1 \leq Q \leq 100\)</span>
+，查询序列的总长度不超过<span
+class="math inline">\(1000000\)</span>。</p>
+<p>时间限制：<span class="math inline">\(1 \text{s}\)</span></p>
+<p>空间限制：<span class="math inline">\(512 \text{MB}\)</span></p>
+<p>题目保证元素不重复，所以相邻元素组成的序对在序列中是唯一的</p>
+<p>一个长度为k的序列是模式序列的字串，当且仅当它的k-1个相邻元素组成的序对都在模式序列中出现过</p>
+<p>所以我们在修改过程中，需要维护模式序列相邻元素组成的序对。询问序列的序对出现了k-1次，就说明它现在是模式序列的字串</p>
+<p>用链表维护模式序列，开一个数组记录序对，用cnt记录出现次数即可</p>
+<p>链表模拟，两个坑点</p>
+<p>一定给后继赋初值，另外一定要先更新last后更新nex</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> debug</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//东方之珠 整夜未眠！</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span>+<span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, Q;</span><br><span class="line"><span class="type">int</span> opt[N], x[N], y[N], a[N];</span><br><span class="line"><span class="type">int</span> last[N], pre[N], nex[N];</span><br><span class="line"><span class="type">int</span> cnt, res;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">charu</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;<span class="keyword">if</span> (pre[x] == last[x]) ++ cnt;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">shanchu</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;<span class="keyword">if</span> (pre[x] == last[x]) -- cnt;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">yhm</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(last, <span class="number">0</span>, <span class="keyword">sizeof</span> last);</span><br><span class="line">    <span class="built_in">memset</span>(pre, <span class="number">0</span>, <span class="keyword">sizeof</span> pre);</span><br><span class="line">    <span class="built_in">memset</span>(nex, <span class="number">0</span>, <span class="keyword">sizeof</span> nex);</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">u</span><span class="params">(n + <span class="number">3</span>)</span>, v, i, k</span>;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">&quot;%d&quot;</span>, &amp;k);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= k; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span> (<span class="string">&quot;%d&quot;</span>, &amp;v);</span><br><span class="line">        pre[v] = u;</span><br><span class="line">        u = v;</span><br><span class="line">    &#125;</span><br><span class="line">    pre[n + <span class="number">4</span>] = u, cnt = res = <span class="number">0</span>;<span class="comment">//keng</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= n; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        nex[a[i]] = a[i + <span class="number">1</span>];</span><br><span class="line">        last[a[i + <span class="number">1</span>]] = a[i];</span><br><span class="line">        <span class="built_in">charu</span>(a[i + <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        u = x[i], v = y[i];</span><br><span class="line">        <span class="keyword">if</span> (opt[i] == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">shanchu</span>(u); <span class="built_in">shanchu</span>(nex[u]);</span><br><span class="line">            nex[last[u]] = nex[u];</span><br><span class="line">            last[nex[u]] = last[u];</span><br><span class="line">            <span class="built_in">charu</span>(nex[u]);</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (! u) u = n + <span class="number">1</span>;</span><br><span class="line">            <span class="built_in">shanchu</span>(nex[u]);</span><br><span class="line">            last[v] = u, nex[v] = nex[u];</span><br><span class="line">            last[nex[u]] = v, nex[u] = v;<span class="comment">//keng</span></span><br><span class="line">            <span class="built_in">charu</span>(v), <span class="built_in">charu</span>(nex[v]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (cnt == k - <span class="number">1</span>) ++ res;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; res &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">thestars</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="built_in">scanf</span> (<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;Q);</span><br><span class="line">    a[<span class="number">0</span>] = n + <span class="number">1</span>, a[n + <span class="number">1</span>] = n + <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) <span class="built_in">scanf</span> (<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= m; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span> (<span class="string">&quot;%d%d&quot;</span>, &amp;opt[i], &amp;x[i]);</span><br><span class="line">        <span class="keyword">if</span> (opt[i] != <span class="number">1</span>) <span class="built_in">scanf</span> (<span class="string">&quot;%d&quot;</span>, &amp;y[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (Q --) <span class="built_in">yhm</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> youngore = <span class="built_in">thestars</span>();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="小鱼-1">小鱼</h3>
+<p>题目描述</p>
+<p>小鱼遇到了一个组合问题，给定正整数<span
+class="math inline">\(n\)</span>，求 <span class="math display">\[
+\sum_{i=1}^{n} \frac{n}{gcd(i,n)}
+\]</span> 输入格式</p>
+<p>第<span class="math inline">\(1\)</span>行一个整数<span
+class="math inline">\(T\)</span>，表示有<span
+class="math inline">\(T\)</span>个询问。</p>
+<p>接下来<span class="math inline">\(T\)</span>行，每行一个数<span
+class="math inline">\(n\)</span>。</p>
+<p>输出格式</p>
+<p><span
+class="math inline">\(T\)</span>行，每行对应一个询问的答案。</p>
+<p>样例数据</p>
+<p>input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">3</span><br><span class="line">7</span><br><span class="line">11</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>数据规模与约定</p>
+<p>对于 <span class="math inline">\(40\%\)</span> 的数据，<span
+class="math inline">\(1 \leq n \leq 2000\)</span>。</p>
+<p>对于另外 <span class="math inline">\(10\%\)</span> 的数据，保证<span
+class="math inline">\(n\)</span>是质数。</p>
+<p>对于另外 <span class="math inline">\(10\%\)</span> 的数据，保证<span
+class="math inline">\(n\)</span>是两个质数的乘积。</p>
+<p>对于 <span class="math inline">\(100\%\)</span> 的数据，<span
+class="math inline">\(1 \leq T \leq 300000,1 \leq n \leq
+10000000\)</span>。</p>
+<p>时间限制：<span class="math inline">\(2 \text{s}\)</span></p>
+<p>空间限制：<span class="math inline">\(512 \text{MB}\)</span></p>
+<p><img
+src="https://pic.imgdb.cn/item/6327cf9a16f2c2beb1262e2b.png" /></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> debug</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//东方之珠 整夜未眠！</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e7</span>+<span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">gcd</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span>&#123;<span class="keyword">return</span> !y ? x : <span class="built_in">gcd</span>(y, x%y);&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> g[N], w[N], last[N];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> v[N], pri[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">thestars</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T, i, j, n, <span class="built_in">cnt</span>(<span class="number">0</span>);</span><br><span class="line">    w[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= N; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (! v[i])</span><br><span class="line">        &#123;</span><br><span class="line">            pri[++ cnt] = last[i] = i;</span><br><span class="line">            g[i] = w[i] = i * (i - <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i * pri[j] &lt;= N; ++ j)</span><br><span class="line">        &#123;</span><br><span class="line">            v[i * pri[j]] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (! (i % pri[j]))</span><br><span class="line">            &#123;</span><br><span class="line">                g[i * pri[j]] = g[i] * pri[j] * pri[j] - pri[j] + <span class="number">1</span>;</span><br><span class="line">                w[i * pri[j]] = w[i / last[i]] * g[i * pri[j]];</span><br><span class="line">                last[i * pri[j]] = last[i] * pri[j];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            g[i * pri[j]] = pri[j] * (pri[j] - <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">            w[i * pri[j]] = w[i] * w[pri[j]];</span><br><span class="line">            last[i * pri[j]] = pri[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T --)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span> (<span class="string">&quot;%d&quot;</span>, &amp;i);</span><br><span class="line">        cout &lt;&lt; w[i] &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> youngore = <span class="built_in">thestars</span>();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;;&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9B%86%E8%AE%AD/" rel="tag"># 集训</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/08/21/%E4%BB%A3%E7%A0%81%E7%B4%A0%E5%85%BB%E4%B8%8E%E8%A7%84%E8%8C%83/" rel="prev" title="代码素养与规范">
+                  <i class="fa fa-chevron-left"></i> 代码素养与规范
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/08/24/8.24Day8%EF%BC%88%E5%AE%8C%E7%BB%93%EF%BC%89/" rel="next" title="8.24DAY8(END)">
+                  8.24DAY8(END) <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Youngore</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"cdn":"//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML","tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

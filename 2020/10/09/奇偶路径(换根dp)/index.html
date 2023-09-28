@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="题目大意：对于正整数 𝑎, 𝑏 定义函数 𝑓(𝑎, 𝑏) 表示将 𝑎 和 𝑏 用二进制表示后二者不同位的个数。现给出一棵 𝑛 个点的树，点有点权 𝑎𝑖 ，点 𝑖 与点 𝑗 的距离 𝑑𝑖𝑠(𝑖,𝑗) 定义为两点间最短路经过的边数。询问共有多少点对满足 𝑓(𝑎𝑖, 𝑎𝑗) 与 𝑑𝑖𝑠(𝑖,𝑗) 的奇偶性不同">
+<meta property="og:type" content="article">
+<meta property="og:title" content="奇偶路径(换根dp)">
+<meta property="og:url" content="http://example.com/2020/10/09/%E5%A5%87%E5%81%B6%E8%B7%AF%E5%BE%84(%E6%8D%A2%E6%A0%B9dp)/index.html">
+<meta property="og:site_name" content="Welcome to my blog!">
+<meta property="og:description" content="题目大意：对于正整数 𝑎, 𝑏 定义函数 𝑓(𝑎, 𝑏) 表示将 𝑎 和 𝑏 用二进制表示后二者不同位的个数。现给出一棵 𝑛 个点的树，点有点权 𝑎𝑖 ，点 𝑖 与点 𝑗 的距离 𝑑𝑖𝑠(𝑖,𝑗) 定义为两点间最短路经过的边数。询问共有多少点对满足 𝑓(𝑎𝑖, 𝑎𝑗) 与 𝑑𝑖𝑠(𝑖,𝑗) 的奇偶性不同">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-09T07:01:30.000Z">
+<meta property="article:modified_time" content="2020-11-02T10:47:40.382Z">
+<meta property="article:author" content="Youngore">
+<meta property="article:tag" content="树形dp">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2020/10/09/%E5%A5%87%E5%81%B6%E8%B7%AF%E5%BE%84(%E6%8D%A2%E6%A0%B9dp)/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2020/10/09/%E5%A5%87%E5%81%B6%E8%B7%AF%E5%BE%84(%E6%8D%A2%E6%A0%B9dp)/","path":"2020/10/09/奇偶路径(换根dp)/","title":"奇偶路径(换根dp)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>奇偶路径(换根dp) | Welcome to my blog!</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Welcome to my blog!</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="fa fa-tag fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Youngore"
+      src="https://pic.imgdb.cn/item/63212a2d16f2c2beb14b0110.jpg">
+  <p class="site-author-name" itemprop="name">Youngore</p>
+  <div class="site-description" itemprop="description">Give it time, it will happen</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">222</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags">
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Youngore" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Youngore" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/14334254/youngore" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;14334254&#x2F;youngore" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/09/%E5%A5%87%E5%81%B6%E8%B7%AF%E5%BE%84(%E6%8D%A2%E6%A0%B9dp)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.imgdb.cn/item/63212a2d16f2c2beb14b0110.jpg">
+      <meta itemprop="name" content="Youngore">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+      <meta itemprop="description" content="Give it time, it will happen">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="奇偶路径(换根dp) | Welcome to my blog!">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          奇偶路径(换根dp)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-10-09 15:01:30" itemprop="dateCreated datePublished" datetime="2020-10-09T15:01:30+08:00">2020-10-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-11-02 18:47:40" itemprop="dateModified" datetime="2020-11-02T18:47:40+08:00">2020-11-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>题目大意：对于正整数 𝑎, 𝑏 定义函数 𝑓(𝑎, 𝑏) 表示将 𝑎 和 𝑏
+用二进制表示后二者不同位的个数。现给出一棵 𝑛 个点的树，点有点权 𝑎𝑖 ，点
+𝑖 与点 𝑗 的距离 𝑑𝑖𝑠(𝑖,𝑗)
+定义为两点间最短路经过的边数。询问共有多少点对满足 𝑓(𝑎𝑖, 𝑎𝑗) 与 𝑑𝑖𝑠(𝑖,𝑗)
+的奇偶性不同</p>
+<span id="more"></span>
+<p>首先鸣谢<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wsdslll/">Tethys大佬</a></p>
+<p><del>大佬说</del>一眼看出是个换根dp</p>
+<p>无论从图论还是dp的角度来说，这都是一道不可多得的好题</p>
+<p>考虑对于一个节点x，一个能与他组成点对并造成贡献的点必定属于以下两种：</p>
+<ul>
+<li>距离x奇数条边，且<span class="math inline">\(a_i\)</span>与<span
+class="math inline">\(a_x\)</span>有偶数位不同</li>
+<li>距离x偶数条便，且<span class="math inline">\(a_i\)</span>与<span
+class="math inline">\(a_x\)</span>有奇数位不同</li>
+</ul>
+<p>然后考虑x与其儿子y，y如何继承来自x的价值？</p>
+<p><strong>显然：x与y只差着一条边，如果一个点需要经历奇数条边才能到达x，那么此点需要经历偶数条边才能到达y，反之亦然</strong></p>
+<p>如果发现<span class="math inline">\(a_x\)</span>与<span
+class="math inline">\(a_y\)</span>有奇数位不同，可以转化为：原来与x这个点的权值有偶数位不同的点，现在与y这个点有奇数位不同</p>
+<p>如果发现<span class="math inline">\(a_x\)</span>与<span
+class="math inline">\(a_y\)</span>有偶数位不同，可以转化为：原来与x这个点的权值有奇数位不同的点，现在与y这个点有偶数位不同</p>
+<p>证明：</p>
+<p>在<span class="math inline">\(a_x\)</span>与<span
+class="math inline">\(a_y\)</span>有奇数位不同的情况下，设另一个点为t，且<span
+class="math inline">\(a_t\)</span>与<span
+class="math inline">\(a_x\)</span>有偶数位不同，偶数位？我们设为0</p>
+<p><strong>显然</strong>此时<span
+class="math inline">\(a_y\)</span>与<span
+class="math inline">\(a_t\)</span>有奇数位不同，反之依然</p>
+<p>这种类比化一的思想太niub了</p>
+<p>特判除了1的情况，别的情况就都可以继承啦！</p>
+<p>最后除以2的原因是因为我们的答案计算了两遍，设想在一个点<span
+class="math inline">\(l\)</span>的时候，肯定计算了另一个点<span
+class="math inline">\(r\)</span>所带来的贡献，在<span
+class="math inline">\(r\)</span>的时候，又再次计算了<span
+class="math inline">\(l\)</span>的贡献，而本质上<span
+class="math inline">\(f(a,b)=f(b,a)\)</span>所以理所应当的除以2</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">s</span><span class="params">(<span class="number">0</span>)</span>, <span class="title">w</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="type">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (ch &lt; <span class="string">&#x27;0&#x27;</span> || ch &gt; <span class="string">&#x27;9&#x27;</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">&#x27;-&#x27;</span>) w = <span class="number">-1</span>; ch = <span class="built_in">getchar</span>();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; ch &lt;= <span class="string">&#x27;9&#x27;</span>) s = s * <span class="number">10</span> + ch - <span class="string">&#x27;0&#x27;</span>, ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> s * w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">put</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (! x) <span class="built_in">putchar</span>(<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span>) <span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>), x = -x;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">num</span><span class="params">(<span class="number">0</span>)</span></span>; <span class="type">char</span> c[<span class="number">66</span>];</span><br><span class="line">    <span class="keyword">while</span> (x) c[++ num] = x % <span class="number">10</span> + <span class="number">48</span>, x /= <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">while</span> (num) <span class="built_in">putchar</span>(c[num --]);</span><br><span class="line">    <span class="keyword">return</span> (<span class="type">void</span>)(<span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> ver[N &lt;&lt; <span class="number">1</span>], nex[N &lt;&lt; <span class="number">1</span>], head[N &lt;&lt; <span class="number">1</span>], cnt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">add_edge</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ver[++ cnt] = y;</span><br><span class="line">    nex[cnt] = head[x];</span><br><span class="line">    <span class="keyword">return</span> (<span class="type">void</span>)(head[x] = cnt);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, res;</span><br><span class="line"><span class="type">int</span> a[N], f[N], h[N], dep[N], fa[N]; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">fuck</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x || y)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> ((x &amp; <span class="number">1</span>) != (y &amp; <span class="number">1</span>)) ++ ret;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>, y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> yhm_fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x != <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> ((dep[x] &amp; <span class="number">1</span>) != (<span class="built_in">fuck</span>(a[<span class="number">1</span>], a[x]) &amp; <span class="number">1</span>))</span><br><span class="line">        ++ h[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">else</span> ++ f[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> i, y;</span><br><span class="line">    <span class="keyword">for</span> (i = head[x]; i; i = nex[i])</span><br><span class="line">    &#123;</span><br><span class="line">        y = ver[i];</span><br><span class="line">        <span class="keyword">if</span> (y == yhm_fa) <span class="keyword">continue</span>;</span><br><span class="line">        fa[y] = x;</span><br><span class="line">        dep[y] = dep[x] + <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">build</span>(y, x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i, y;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        res += h[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (i = head[x]; i; i = nex[i])</span><br><span class="line">        &#123;</span><br><span class="line">            y = ver[i];</span><br><span class="line">            <span class="built_in">dfs</span>(y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">fuck</span>(a[fa[x]], a[x]) &amp; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            h[x] = h[fa[x]];</span><br><span class="line">            f[x] = f[fa[x]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            h[x] = f[fa[x]];</span><br><span class="line">            f[x] = h[fa[x]];</span><br><span class="line">        &#125;</span><br><span class="line">        res += h[x];</span><br><span class="line">        <span class="keyword">for</span> (i = head[x]; i; i = nex[i])</span><br><span class="line">        &#123;</span><br><span class="line">            y = ver[i];</span><br><span class="line">            <span class="keyword">if</span> (y == fa[x]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="built_in">dfs</span>(y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i, x, y;</span><br><span class="line"></span><br><span class="line">    n = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; n; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        x = <span class="built_in">read</span>(), y = <span class="built_in">read</span>();</span><br><span class="line">        <span class="built_in">add_edge</span>(x, y), <span class="built_in">add_edge</span>(y, x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) a[i] = <span class="built_in">read</span>();</span><br><span class="line">    </span><br><span class="line">    f[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">build</span>(<span class="number">1</span>, <span class="number">0</span>), <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">put</span>(res / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%A0%91%E5%BD%A2dp/" rel="tag"># 树形dp</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/10/09/%E4%BF%9D%E5%8D%AB%E7%8E%8B%E5%9B%BD/" rel="prev" title="保卫王国">
+                  <i class="fa fa-chevron-left"></i> 保卫王国
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/10/09/%E5%9C%B0%E9%9B%B7/" rel="next" title="地雷">
+                  地雷 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Youngore</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"cdn":"//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML","tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

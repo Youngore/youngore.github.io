@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="关于存图方式常用的有两种">
+<meta property="og:type" content="article">
+<meta property="og:title" content="链式前向星">
+<meta property="og:url" content="http://example.com/2020/07/05/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/index.html">
+<meta property="og:site_name" content="Welcome to my blog!">
+<meta property="og:description" content="关于存图方式常用的有两种">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-05T04:06:39.000Z">
+<meta property="article:modified_time" content="2022-09-19T02:13:33.229Z">
+<meta property="article:author" content="Youngore">
+<meta property="article:tag" content="图论">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2020/07/05/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2020/07/05/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/","path":"2020/07/05/链式前向星/","title":"链式前向星"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>链式前向星 | Welcome to my blog!</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Welcome to my blog!</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="fa fa-tag fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D-%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="nav-number">1.</span> <span class="nav-text">第一种 邻接矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D-%E9%82%BB%E6%8E%A5%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">第二种 邻接表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number"></span> <span class="nav-text">12e[i].nxt &#x3D; headx[x];head[x] &#x3D; cnt;</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Youngore"
+      src="https://pic.imgdb.cn/item/63212a2d16f2c2beb14b0110.jpg">
+  <p class="site-author-name" itemprop="name">Youngore</p>
+  <div class="site-description" itemprop="description">Give it time, it will happen</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">222</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags">
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Youngore" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Youngore" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/14334254/youngore" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;14334254&#x2F;youngore" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/07/05/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.imgdb.cn/item/63212a2d16f2c2beb14b0110.jpg">
+      <meta itemprop="name" content="Youngore">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+      <meta itemprop="description" content="Give it time, it will happen">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="链式前向星 | Welcome to my blog!">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          链式前向星
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-07-05 12:06:39" itemprop="dateCreated datePublished" datetime="2020-07-05T12:06:39+08:00">2020-07-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-09-19 10:13:33" itemprop="dateModified" datetime="2022-09-19T10:13:33+08:00">2022-09-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E5%90%8E%E6%84%9F/" itemprop="url" rel="index"><span itemprop="name">学后感</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>关于存图方式常用的有两种 <span id="more"></span></p>
+<h3 id="第一种-邻接矩阵">第一种 邻接矩阵</h3>
+<p>直接暴力存图</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> u, v, w;</span><br><span class="line">cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">a[u][v] = w;</span><br></pre></td></tr></table></figure>
+<p>即意为在<span class="math inline">\(u\)</span>与<span
+class="math inline">\(v\)</span>之间连上一条权值为<span
+class="math inline">\(w\)</span>的边</p>
+<p>也可以借助<span
+class="math inline">\(vector\)</span>来存储，但是<span
+class="math inline">\(vector\)</span>容易被卡，不建议用</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt;q[N];</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i) &#123;</span><br><span class="line">   <span class="type">int</span> u, v, w;</span><br><span class="line">   cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">   q[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<span class="math inline">\(u\)</span>节点的后面新开一个小空间
+存<span class="math inline">\(v\)</span>，表示<span
+class="math inline">\(u\)</span>，<span
+class="math inline">\(v\)</span>之间有边</p>
+<p>以上存无边权的，下面的<span
+class="math inline">\(pair\)</span>类型的<span
+class="math inline">\(vector\)</span>是存储有边权的</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;pari&lt;<span class="type">int</span>,<span class="type">int</span>&gt; &gt;q[N];</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++ i) &#123;</span><br><span class="line">   <span class="type">int</span> u, v, w;</span><br><span class="line">   cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">   q[u].<span class="built_in">push</span>(<span class="built_in">make_pair</span>(v, w));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第二种-邻接表">第二种 邻接表</h3>
+<p>也就是 链式前向星</p>
+<p>链式前向星的原理是通过某种合法又合理的操作，使得整个图联动起来</p>
+<p>写链式前向星，一般都是以下格式</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span> &#123;</span><br><span class="line">   <span class="type">int</span> frm, to, val, nxt;</span><br><span class="line">&#125;e[N];<span class="type">int</span> cnt, head[N];</span><br></pre></td></tr></table></figure>
+<p>其中<span class="math inline">\(cnt\)</span>存边的编号，<span
+class="math inline">\(head[x]\)</span>表示<span
+class="math inline">\(x\)</span>这个节点最后一次加入的边的编号是多少(也可以理解为以<span
+class="math inline">\(x\)</span>为起点最后一次加入的边的编号）</p>
+<p>结构体中的<span class="math inline">\(e[i]\)</span>表示<span
+class="math inline">\(i\)</span>这条边的各种信息</p>
+<p><span class="math inline">\(e[i].frm\)</span> 表示<span
+class="math inline">\(i\)</span>这条边的起点是哪里</p>
+<p><span class="math inline">\(e[i].to\)</span>表示<span
+class="math inline">\(i\)</span>这条边的终点是哪里</p>
+<p><span class="math inline">\(e[i].val\)</span> 表示<span
+class="math inline">\(i\)</span>这条边的权值是多少</p>
+<p><span class="math inline">\(e[i].nx\)</span>t 表示与<span
+class="math inline">\(i\)</span>这条边起点相同的上一条边的编号是多少</p>
+<p>对于新加入的边，我们首先<span
+class="math inline">\(cnt\)</span>(边的编号)要递加</p>
+<p>其次我们对于这条边，更新他的各种信息:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">add</span> <span class="params">(<span class="type">int</span> u, v, w)</span> </span>&#123;</span><br><span class="line">   e[++cnt].frm = u;</span><br><span class="line">   e[cnt].to = v;</span><br><span class="line">   e[cnt].val = w;</span><br><span class="line">   e[cnt].nxt = head[u];</span><br><span class="line">   head[u] = cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上边那个函数表示cnt这条边的起点是u，终点是v，权值是w</p>
+<p>我们考虑如何来理解这个nxt与head数组</p>
+<p>我们这条边的共起点的上一条边必定是我们这条边的起点最后一次加入的一条边（有点绕）</p>
+<p>如下:</p>
+<p>对于1 2 1这条边</p>
+<p><span class="math inline">\(edge[1].to = 2;edge[1].nxt = 0;head[1] =
+1;\)</span></p>
+<p>对于2 3 2这条边</p>
+<p><span class="math inline">\(edge[2].to = 3;edge[2].nxt = 0;head[2] =
+2;\)</span></p>
+<p>对于3 4 3这条边</p>
+<p><span class="math inline">\(edge[3].to = 4;edge[3].nxt = 0;head[3] =
+3;\)</span></p>
+<p>对于1 3 4这条边</p>
+<p><span class="math inline">\(edge[4].to = 3;edge[4].nxt = 1;head[1] =
+4;\)</span></p>
+<p>对于4 1 5这条边</p>
+<p><span class="math inline">\(edge[5].to = 1;edge[5].nxt = 0;head[4] =
+5;\)</span></p>
+<p>对于1 5 6这条边</p>
+<p><span class="math inline">\(edge[6].to = 5;edge[6].nxt = 4;head[1] =
+6;\)</span></p>
+<p>对于4 5 7这条边</p>
+<p><span class="math inline">\(edge[7].to = 5;edge[7].nxt = 5;head[4] =
+7;\)</span></p>
+<p>所以我们的<span class="math inline">\(i\)</span>这条边的<span
+class="math inline">\(nxt\)</span>（与<span
+class="math inline">\(i\)</span>共起点的上一条边的编号）就是<span
+class="math inline">\(head[x]\)</span> (<span
+class="math inline">\(x\)</span>这条边最后一次加入的边的编号)(未更新前的)</p>
+<p>当我们这条边信息更新完了之后，再去更新<span
+class="math inline">\(head\)</span>数组</p>
+<p>再次回想<span class="math inline">\(head\)</span>数组定义，以<span
+class="math inline">\(x\)</span>为顶点最后一次加入的边，不就是当前这条边的编号吗</p>
+<p>顾:</p>
+<h2 id="section"><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e[i].nxt = headx[x];</span><br><span class="line">head[x] = cnt;</span><br></pre></td></tr></table></figure></h2>
+<p><span class="math inline">\(End..\)</span></p>
+<hr />
+<p>8.31 update:</p>
+<p>现在常用数组版本：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> to[N &lt;&lt; <span class="number">1</span>], len[N &lt;&lt; <span class="number">1</span>], nex[N &lt;&lt; <span class="number">1</span>], head[N &lt;&lt; <span class="number">1</span>], cnt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> z)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   to[++ cnt] = y;</span><br><span class="line">   len[cnt] = z;</span><br><span class="line">   nex[cnt]= head[x];</span><br><span class="line">   head[x] = cnt;</span><br><span class="line">   <span class="keyword">return</span>;<span class="comment">//随手打return是个好习惯</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag"># 图论</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/07/04/Splay/" rel="prev" title="Splay">
+                  <i class="fa fa-chevron-left"></i> Splay
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/07/05/%E4%BA%8C%E5%88%86%E5%9B%BE/" rel="next" title="二分图">
+                  二分图 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Youngore</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"cdn":"//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML","tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

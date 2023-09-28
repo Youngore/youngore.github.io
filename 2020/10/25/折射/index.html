@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="题目大意：小 Y 十分喜爱光学相关的问题, 一天他正在研究折射.他在平面上放置了 n 个折射装置, 希望利用这些装置画出美丽的折线.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="折射">
+<meta property="og:url" content="http://example.com/2020/10/25/%E6%8A%98%E5%B0%84/index.html">
+<meta property="og:site_name" content="Welcome to my blog!">
+<meta property="og:description" content="题目大意：小 Y 十分喜爱光学相关的问题, 一天他正在研究折射.他在平面上放置了 n 个折射装置, 希望利用这些装置画出美丽的折线.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-25T10:48:39.000Z">
+<meta property="article:modified_time" content="2020-11-02T10:42:17.889Z">
+<meta property="article:author" content="Youngore">
+<meta property="article:tag" content="动规">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2020/10/25/%E6%8A%98%E5%B0%84/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2020/10/25/%E6%8A%98%E5%B0%84/","path":"2020/10/25/折射/","title":"折射"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>折射 | Welcome to my blog!</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Welcome to my blog!</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="fa fa-tag fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Youngore"
+      src="https://pic.imgdb.cn/item/63212a2d16f2c2beb14b0110.jpg">
+  <p class="site-author-name" itemprop="name">Youngore</p>
+  <div class="site-description" itemprop="description">Give it time, it will happen</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">222</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags">
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Youngore" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Youngore" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/14334254/youngore" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;14334254&#x2F;youngore" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/25/%E6%8A%98%E5%B0%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.imgdb.cn/item/63212a2d16f2c2beb14b0110.jpg">
+      <meta itemprop="name" content="Youngore">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my blog!">
+      <meta itemprop="description" content="Give it time, it will happen">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="折射 | Welcome to my blog!">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          折射
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-10-25 18:48:39" itemprop="dateCreated datePublished" datetime="2020-10-25T18:48:39+08:00">2020-10-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-11-02 18:42:17" itemprop="dateModified" datetime="2020-11-02T18:42:17+08:00">2020-11-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>题目大意：小 Y 十分喜爱光学相关的问题,
+一天他正在研究折射.他在平面上放置了 n 个折射装置,
+希望利用这些装置画出美丽的折线.<span id="more"></span>折线将从某个装置出发,
+并且在经过一处装置时可以转向, 若经过的装置坐标依次为 (x1, y1),(x2, y2),
+. . .(xk, yk), 则必须满足:</p>
+<p><span class="math display">\[• ∀j ∈ (1, k], y_j &lt; y_j−1\]</span>
+<span class="math display">\[• ∀j ∈ (2, k], x_{j−2} &lt; x_j &lt;
+x{j−1}\;or\;x{j−1} &lt; x_j &lt; x_{j−2}\]</span></p>
+<p>现在他希望你能告诉他, 一共有多少种不同的光线能被他画出来,
+两种光线不同当且仅当经过的折射装置的集合不同. 你只需要告诉他答案对109 +
+7 取模后的结果.（其中n属于6000）</p>
+<p>自己的错误思路：</p>
+<p>看到数据范围，猜是dp或者模拟</p>
+<p>于是开始构思思路：显然按y坐标从大到小排序之后，每一个点，都可以从他后面的点转移过来</p>
+<p>但是转移的时候防止出现以下情况：（别管连边，只是折线的方向）</p>
+<p><img
+src="https://pic.downk.cc/item/5f955bfc1cd1bbb86b960d70.png" /></p>
+<p>显然，我们1这个节点可以从4号点转移答案过来（先别管怎么转移的）</p>
+<p>同理，我们也可以从2号点转移过来，但是如果从2号点转移的话，就不满足：</p>
+<p><span class="math display">\[• ∀j ∈ (2, k], x_{j−2} &lt; x_j &lt;
+x{j−1}\;or\;x{j−1} &lt; x_j &lt; x_{j−2}\]</span></p>
+<p>满足上述条件的，显然只有以下两种情况：</p>
+<p><img
+src="https://pic.downk.cc/item/5f955dd61cd1bbb86b96642c.png" /></p>
+<p>对于类似于上图“1-2-3”这样的折线，我们设一个<span
+class="math inline">\(right[x]\)</span>表示以x作为居右侧的转折点，所能得到的折线方案数目</p>
+<p>对于类似于上图“4-5-6”这样的折线，我们设一个<span
+class="math inline">\(left[x]\)</span>表示以x作为居右侧的转折点，所能得到的折线方案数目</p>
+<p>然后就可以倒着往前推了</p>
+<p>特别的，我们发现如果一个点在另一个点的下面，那么他一定会有贡献，无论大小</p>
+<p>假设我们当前枚举到的为<span
+class="math inline">\(t\)</span>，我们起初可以由<span
+class="math inline">\(t\)</span>向任意方向指出一条射线</p>
+<p>若在<span class="math inline">\(t\)</span>横坐标的左边有一个点<span
+class="math inline">\(g\)</span>，显然，可以连一条由<span
+class="math inline">\(t\)</span>指向<span
+class="math inline">\(g\)</span>的边（不继续延伸），在继续扩展，我们以<span
+class="math inline">\(g\)</span>为居右侧的转折点，累加他的贡献，并累加到以<span
+class="math inline">\(t\)</span>为居左侧的转折点的计数数组里面</p>
+<p>再<span
+class="math inline">\(t\)</span>横坐标的右边亦是同理，详见代码</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">6e3</span> + <span class="number">66</span>, mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, ans;</span><br><span class="line"><span class="type">int</span> l[N], r[N], res[N];</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">yhzhyhm</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> yhzhyhm &amp;yhzh) <span class="type">const</span> &#123;<span class="keyword">return</span> y &gt; yhzh.y;&#125;</span><br><span class="line">&#125;yh[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j;</span><br><span class="line">    n = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) yh[i].x = <span class="built_in">read</span>(), yh[i].y = <span class="built_in">read</span>();</span><br><span class="line">    <span class="built_in">sort</span>(yh + <span class="number">1</span>, yh + <span class="number">1</span> + n);</span><br><span class="line"></span><br><span class="line">    l[n] = r[n] = <span class="number">0</span>, res[n] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; -- i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="type">int</span> <span class="title">num</span><span class="params">(<span class="number">0</span>)</span>, <span class="title">num1</span><span class="params">(<span class="number">0</span>)</span>, <span class="title">num2</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        res[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt;= n; ++ j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (yh[i].x &gt; yh[j].x)</span><br><span class="line">            &#123;</span><br><span class="line">                num1 = (num1 + <span class="number">1</span>) % mod;</span><br><span class="line">                res[i] = (res[i] + l[j] % mod) % mod, r[i] = (r[i] + l[j]) % mod;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (yh[i].x &lt; yh[j].x)</span><br><span class="line">            &#123;</span><br><span class="line">                num2 = (num2 + <span class="number">1</span>) % mod;</span><br><span class="line">                res[i] = (res[i] + r[j] % mod) % mod, l[i] = (l[i] + r[j]) % mod;</span><br><span class="line">            &#125;</span><br><span class="line">            num = (num + <span class="number">1</span>) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        res[i] = (res[i] + num) % mod;</span><br><span class="line">        r[i] = (r[i] + num1 % mod) % mod;</span><br><span class="line">        l[i] = (l[i] + num2 % mod) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) ans = (ans + res[i] % mod) % mod;</span><br><span class="line">    <span class="built_in">put</span>(ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>正解：</p>
+<p>其实暴力的做法是<span
+class="math inline">\(O(n^3)\)</span>，但是我们可以xjb优化一下就成为n方</p>
+<p>显然的道理：按照y排序搞搞搞不能进行优化，所以我们按照x从小到大排序</p>
+<p>状态：<span
+class="math inline">\(f[i][0]\)</span>表示以i为起点向左下拐的方案数目，设<span
+class="math inline">\(f[i][1]\)</span>表示以i为起点向右下拐的数目</p>
+<p>初始化：<span class="math inline">\(f[i][0]=f[i][1]=1\)</span></p>
+<p>对于当前枚举到的i，我们考虑i之前的某一个节点j</p>
+<p>如果发现<span
+class="math inline">\(y_j&gt;y_i\)</span>显然i是j的转折点，所以<span
+class="math inline">\(f[j][1]+=f[i][0]\)</span></p>
+<p>如果发现<span
+class="math inline">\(y_j&lt;y_i\)</span>显然j是i的转折点，所以<span
+class="math inline">\(f[i][0]+=f[j][1]\)</span></p>
+<p>一个小细节：最后的ans加成的时候，显然需要<span
+class="math inline">\(f[i][0]+f[i][1]-1\)</span>（想一想，为什么？）</p>
+<p>因为我们初始化的时候，都初始化为1，但实际上是有一条重复的，就是我们假如从这个点出发，谁也不连，直接就是一条折线</p>
+<p>但是我们那两个状态把这个算重复了所以需要减去1</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">6e3</span> + <span class="number">66</span>, mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">yhzhyhm</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> yhzhyhm &amp;yhzh) <span class="type">const</span> &#123;<span class="keyword">return</span> x &lt; yhzh.x;&#125;</span><br><span class="line">&#125;yh[N];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, res, f[N][<span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j;</span><br><span class="line">    n = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) yh[i].x = <span class="built_in">read</span>(), yh[i].y = <span class="built_in">read</span>();</span><br><span class="line">    <span class="built_in">sort</span>(yh + <span class="number">1</span>, yh + <span class="number">1</span> + n);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        f[i][<span class="number">0</span>] = f[i][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (j = i - <span class="number">1</span>; j &gt;= <span class="number">1</span>; -- j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (yh[i].y &gt; yh[j].y) f[i][<span class="number">0</span>] = (f[i][<span class="number">0</span>] + f[j][<span class="number">1</span>]) % mod;</span><br><span class="line">            <span class="keyword">else</span> f[j][<span class="number">1</span>] = (f[j][<span class="number">1</span>] + f[i][<span class="number">0</span>]) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; ++ i) res = (res + (f[i][<span class="number">0</span>] + f[i][<span class="number">1</span>] - <span class="number">1</span>) % mod) % mod;</span><br><span class="line">    <span class="built_in">put</span>(res);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%8A%A8%E8%A7%84/" rel="tag"># 动规</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/10/25/%E4%B9%B0%E5%92%96%E5%95%A1/" rel="prev" title="买咖啡">
+                  <i class="fa fa-chevron-left"></i> 买咖啡
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/10/26/DIY%E6%89%8B%E5%B7%A5/" rel="next" title="DIY手工">
+                  DIY手工 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Youngore</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"cdn":"//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML","tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
